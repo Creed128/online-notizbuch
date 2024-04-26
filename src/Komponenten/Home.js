@@ -1,6 +1,6 @@
 // Home.js
 import React from 'react';
-import backgroundImage from './background/background-image.webp'; // Ensure this path is correct
+import backgroundImage from './background/background-image.png'; // Ensure this path is correct
 import './Home.css'; // Ensure the CSS is being imported
 
 const Home = () => {
