@@ -3,6 +3,7 @@ import React from 'react';
 import backgroundImage from './background/background-image.webp'; // Ensure this path is correct
 import './Home.css'; // Ensure the CSS is being imported
 
+
 const Home = () => {
   return (
     <div className="home-container" style={{ backgroundImage: `url(${backgroundImage})` }}>

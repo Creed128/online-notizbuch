@@ -50,7 +50,7 @@ const Connexion = () => {
       <div className="row justify-content-center">
         <div className="col-md-6">
           <form onSubmit={handleSubmit}>
-            <h3>Connexion</h3>
+            <h3> login </h3>
             <div className="form-group">
               <label>Benutzername:</label>
               <input
