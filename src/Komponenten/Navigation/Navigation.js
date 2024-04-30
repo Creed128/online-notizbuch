@@ -1,4 +1,3 @@
-// src/Komponenten/Navigation/Navigation.js
 import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../contexts/UserContext';
@@ -10,7 +9,7 @@ const Navigation = () => {
 
   const handleLogout = () => {
     logout();
-    navigate('/login'); // Rediriger vers la page de connexion après la déconnexion
+    navigate('/login');
   };
 
   return (
@@ -18,8 +17,7 @@ const Navigation = () => {
       <Link to="/home" className="nav-link">Home</Link>
       {user ? (
         <>
-          <button onClick={handleLogout} className="nav-link">logout</button>
-          {/* Retiré le bouton "Notiz erstellen" */}
+          <button onClick={handleLogout} className="nav-link">Logout</button>
         </>
       ) : (
         <Link to="/login" className="nav-link">Login</Link>

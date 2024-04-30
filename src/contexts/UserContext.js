@@ -1,20 +1,33 @@
-// src/contexts/UserContext.js
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useCallback } from 'react';
+import axios from 'axios';
 
 export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
-  const [user, setUser] = useState(null); // Démarrez avec null pour indiquer aucun utilisateur connecté par défaut
+  const [user, setUser] = useState(null);
 
-  // Fonction pour déconnecter l'utilisateur
   const logout = () => {
-    setUser(null); // Réinitialise l'utilisateur à null lors de la déconnexion
+    setUser(null);
   };
+
+  const hinzufuegenNotiz = useCallback(async (note) => {
+    if (!user) {
+      throw new Error("Not logged in");
+    }
+    try {
+      const response = await axios.post('http://localhost:3002/api/notes', {...note, owner: user.username});
+      return response.data;
+    } catch (error) {
+      console.error('Error adding note:', error);
+      throw error;
+    }
+  }, [user]);
 
   const value = {
     user,
     setUser,
-    logout, // Fournir la fonction de déconnexion via le contexte
+    logout,
+    hinzufuegenNotiz,  // Add the function to the context
   };
 
   return (
