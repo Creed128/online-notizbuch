@@ -6,13 +6,13 @@ import './Home.css'; // Ensure the CSS is being imported
 const Home = () => {
   return (
     <div className="home-container" style={{ backgroundImage: `url(${backgroundImage})` }}>
-      {/* Ensure no additional Navigation is included here, as it should be handled by App.js */}
-      <div className="main-content">
-        <h1>Welcome to Mein Notizbuch!</h1>
-        <p> Macht deine beste Notizen .</p>
-        {/* Rest of your content */}
+      <div className="container vh-100 d-flex justify-content-center align-items-center">
+        <div className="main-content text-center bg-light p-5 rounded shadow">
+          <h1 className="display-4">Welcome to Mein Notizbuch!</h1>
+          <p className="lead">Macht deine besten Notizen hier.</p>
+          <button className="btn btn-primary mt-4">Create New Note</button>
+        </div>
       </div>
-      {/* Ensure no Footer is included here, as it should be handled by App.js */}
     </div>
   );
 };
