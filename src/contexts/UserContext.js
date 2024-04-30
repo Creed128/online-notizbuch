@@ -3,9 +3,7 @@ import React, { createContext, useState } from 'react';
 export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
-  //const [user, setUser] = useState(null);
-  const [user, setUser] = useState({ isConnected: true });
-
+  const [user, setUser] = useState(null); // Initialisation à null
 
   const value = {
     user,
