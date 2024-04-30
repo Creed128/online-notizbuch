@@ -1,37 +1,37 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../../contexts/UserContext';
-import './Register.css'; // Ensure this file has appropriate styles
+import './Register.css';
 
 const Register = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
-    const [isSubmitting, setIsSubmitting] = useState(false); // To handle loading state
+    const [isSubmitting, setIsSubmitting] = useState(false);
     const navigate = useNavigate();
     const { setUser } = useContext(UserContext);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        if (!username || !password) {
-            setErrorMessage('Username and Password cannot be empty.');
-            return;
-        }
-        setIsSubmitting(true); // Set loading state
+        setIsSubmitting(true);
         try {
-            const response = await fetch('/api/register', {
+            const response = await fetch('http://localhost:3002/api/register', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, password }),
             });
-            if (!response.ok) throw new Error('Registration failed. Please try a different username.');
+
+            if (!response.ok) {
+                throw new Error('Registration failed. Please try a different username.');
+            }
+
             const userData = await response.json();
             setUser({ isConnected: true, username: userData.username });
             navigate('/home');
-            setIsSubmitting(false); // Reset loading state
         } catch (error) {
             setErrorMessage(error.message);
-            setIsSubmitting(false); // Reset loading state
+        } finally {
+            setIsSubmitting(false);
         }
     };
 

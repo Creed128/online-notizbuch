@@ -1,16 +1,18 @@
-
 const express = require('express');
 const router = express.Router();
-const userController = require('./userController');
-const notesController = require('./notesController');
+const userController = require('./controllers/userController');
+const notesController = require('./controllers/notesController');
 
-// Existing routes for notes
+// Routes pour la gestion des notes
 router.get('/notes', notesController.getAllNotes);
 router.post('/notes', notesController.createNote);
 router.put('/notes/:id', notesController.updateNote);
 router.delete('/notes/:id', notesController.deleteNote);
 
-// New route for user registration
+// Route pour l'enregistrement des utilisateurs
 router.post('/register', userController.registerUser);
+
+// Ajout de la route pour la connexion des utilisateurs
+router.post('/login', userController.loginUser);
 
 module.exports = router;
