@@ -1,26 +1,17 @@
-/* Navigation.css */
 .navigation-bar {
-    background: #2E3A59;
-    padding: 1rem 2rem; 
     display: flex;
-    justify-content: flex-start; 
-    align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-    position: relative; 
-    width: 100%; 
-    z-index: 1000; 
-}
-
-.nav-link {
-    color: white;
-    text-decoration: none;
-    margin: 0 1rem; 
+    justify-content: flex-start; /* Navigation ganz links ausrichten */
+    align-items: center; /* Vertikal zentrieren */
+    padding: 10px; /* Optional: Abstand um die Navigation herum */
+    position: absolute;
+    top: 10px;
+    right: 200px;
+    background: linear-gradient(to right, rgb(211, 185, 107), rgba(231, 193, 105, 0.659), rgb(151, 123, 7));
     font-weight: bold;
-    padding: 0.5rem 1rem; 
-    border-radius: 5px; 
-    transition: background-color 0.3s; 
-}
-
-.nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.2); 
-}
+    color: rgb(61, 48, 2);
+  }
+  
+  .nav-link {
+    margin-right: 50px; /* Optional: Abstand zwischen den Links */
+  }
+  
