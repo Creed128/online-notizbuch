@@ -7,6 +7,8 @@ import Navigation from './Komponenten/Navigation/Navigation';
 import Footer from './Komponenten/Footer/Footer';
 import Register from './Komponenten/connection/Register';
 import NeueNotizFormular from './Komponenten/NotizFormular/NeueNotizFormular';
+import NotizListe from './Komponenten/NotizListe/NotizListe';
+import NotizDetail from './NotizDetail/NotizDetail'; // Assurez-vous que le chemin est correct
 
 const App = () => {
   const { user } = useContext(UserContext);
@@ -24,6 +26,7 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/home" element={<PrivateRoute><Home /></PrivateRoute>} />
           <Route path="/neue-notiz" element={<PrivateRoute><NeueNotizFormular /></PrivateRoute>} />
+          <Route path="/notizen" element={<PrivateRoute><NotizListe /></PrivateRoute>} />
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="*" element={<Navigate to="/login" />} />
         </Routes>

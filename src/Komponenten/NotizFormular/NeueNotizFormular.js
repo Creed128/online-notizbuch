@@ -1,84 +1,57 @@
 import React, { useState, useContext } from 'react';
 import { UserContext } from '../../contexts/UserContext';
-import './NeueNotizFormular.css';
+import './NeueNotizFormular.css'; // Assurez-vous que le chemin est correct
 
 const NeueNotizFormular = () => {
-  const [titel, setTitel] = useState('');
-  const [inhalt, setInhalt] = useState('');
-  const [isPublic, setIsPublic] = useState(true);
+    const [title, setTitle] = useState('');
+    const [content, setContent] = useState('');
+    const [isPublic, setIsPublic] = useState(true);
 
-  // Utilisation de useContext pour accéder au UserContext
-  const { user, hinzufuegenNotiz } = useContext(UserContext);
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log({ title, content, isPublic });
+        // Ajouter ici la logique pour envoyer les données au serveur
+    };
 
-  const handleNeueNotiz = async () => {
-    if (!titel || !inhalt) {
-      alert("Bitte füllen Sie alle Felder aus.");
-      return;
-    }
-
-    try {
-      // Construction de l'objet note
-      const neueNotiz = {
-        title: titel,
-        content: inhalt,
-        isPublic,
-        owner: user.username
-      };
-
-      // Appel de la fonction hinzufuegenNotiz du contexte
-      await hinzufuegenNotiz(neueNotiz);
-
-      // Réinitialisation des champs après la création
-      setTitel('');
-      setInhalt('');
-      setIsPublic(true);
-
-      alert('Notiz erfolgreich erstellt!');
-    } catch (error) {
-      console.error('Fehler beim Erstellen der Notiz:', error);
-      alert('Fehler beim Erstellen der Notiz. Bitte versuchen Sie es erneut.');
-    }
-  };
-
-  return (
-    <div className="new-note">
-      <h2>Neue Notiz erstellen</h2>
-      <input
-        type="text"
-        className="form-control"
-        value={titel}
-        onChange={(e) => setTitel(e.target.value)}
-        placeholder="Titel eingeben..."
-      />
-      <textarea
-        className="form-control"
-        value={inhalt}
-        onChange={(e) => setInhalt(e.target.value)}
-        placeholder="Schreibe hier deine Notizen..."
-      />
-      <div>
-        <label>
-          <input
-            type="radio"
-            name="public-private"
-            value="oeffentlich"
-            checked={isPublic}
-            onChange={() => setIsPublic(true)}
-          /> Öffentlich
-        </label>
-        <label>
-          <input
-            type="radio"
-            name="public-private"
-            value="privat"
-            checked={!isPublic}
-            onChange={() => setIsPublic(false)}
-          /> Privat
-        </label>
-      </div>
-      <button className="btn btn-primary" onClick={handleNeueNotiz}>Notiz erstellen</button>
-    </div>
-  );
+    return (
+        <div className="neue-notiz-container">
+            <h2 className="neue-notiz-title">Neue Notiz erstellen</h2>
+            <form onSubmit={handleSubmit} className="neue-notiz-form">
+                <input
+                    type="text"
+                    placeholder="Titel eingeben..."
+                    className="neue-notiz-input"
+                    value={title}
+                    onChange={e => setTitle(e.target.value)}
+                />
+                <textarea
+                    placeholder="Schreibe hier deine Notizen..."
+                    className="neue-notiz-textarea"
+                    value={content}
+                    onChange={e => setContent(e.target.value)}
+                />
+                <div className="neue-notiz-radios">
+                    <label className="label-radio">
+                        <input
+                            type="radio"
+                            name="privacy"
+                            checked={isPublic}
+                            onChange={() => setIsPublic(true)}
+                        /> Öffentlich
+                    </label>
+                    <label className="label-radio">
+                        <input
+                            type="radio"
+                            name="privacy"
+                            checked={!isPublic}
+                            onChange={() => setIsPublic(false)}
+                        /> Privat
+                    </label>
+                </div>
+                <button type="submit" className="neue-notiz-button">Notiz erstellen</button>
+            </form>
+        </div>
+    );
 };
 
 export default NeueNotizFormular;
