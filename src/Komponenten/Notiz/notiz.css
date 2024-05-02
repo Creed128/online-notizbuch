@@ -18,7 +18,7 @@
   border-radius: 50px; /* Circular edges for the button */
   padding: 10px 20px;
   color: #0b0b0c; /* Dark color for text */
-  box-shadow: 0px 0px 24px -4px rgba(14, 131, 203, 0.53); /* Soft blue glow */
+  box-shadow: 0px 0px 24px -4px rgba(14, 68, 203, 0.53); /* Soft blue glow */
   cursor: pointer; /* Pointer cursor on hover */
   transition: background 0.3s ease; /* Smooth transition for hover effects */
 }
