@@ -1,15 +1,26 @@
 /* Navigation.css */
 .navigation-bar {
     background: #2E3A59;
-    padding: 1rem;
+    padding: 1rem 2rem; 
     display: flex;
-    justify-content: center; /* Changed from space-between to center */
+    justify-content: flex-start; 
     align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    position: relative; 
+    width: 100%; 
+    z-index: 1000; 
 }
 
 .nav-link {
     color: white;
     text-decoration: none;
-    margin: 0 2rem; /* Added margin to separate the links */
+    margin: 0 1rem; 
     font-weight: bold;
+    padding: 0.5rem 1rem; 
+    border-radius: 5px; 
+    transition: background-color 0.3s; 
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2); 
 }
