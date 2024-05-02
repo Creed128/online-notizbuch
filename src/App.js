@@ -14,7 +14,7 @@ const App = () => {
   const { user } = useContext(UserContext);
 
   const PrivateRoute = ({ children }) => {
-    return user ? children : <Navigate to="/login" />;
+    return user ? children : <Navigate to="/home" />;
   };
 
   return (

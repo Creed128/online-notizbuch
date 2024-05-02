@@ -50,7 +50,7 @@ const NotizListe = () => {
           <div key={note.id} className="note-card">
             <h4>{note.title}</h4>
             <p>Erstellt am: {formatDate(note.created_at)}</p>
-            <button onClick={() => console.log('Detail View for', note.id)}>Voir Plus</button>
+            <button onClick={() => console.log('Detail View for', note.id)}>sieht mehr </button>
           </div>
         ))}
       </div>
