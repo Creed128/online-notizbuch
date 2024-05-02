@@ -1,6 +1,0 @@
-@media (max-width: 750px) {
-    .description-section {
-      flex-direction: column;
-      align-items: center;
-      height: unset;
-    }}

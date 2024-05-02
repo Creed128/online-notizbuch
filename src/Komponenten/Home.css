@@ -1,13 +1,12 @@
-/* Home.css */
-.home-container {
-    position: relative; /* Needed for absolute positioning of children */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background-image: url('./background/background-image.webp');
-    background-size: cover;
-    background-position: center;
-  }
-  
+/* Stil für die gesamte Seite */
+.hom-container {
+  margin: 0;
+  padding: 0;
+  background-image: url('./background/background-image.png');
+  background-size: cover;
+  background-position: center;
+  font-family: Arial, sans-serif;
+  color: #333; /* Standardtextfarbe */
+  justify-content: center;
+  min-height: 100vh;
+}
