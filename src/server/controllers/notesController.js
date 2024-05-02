@@ -1,4 +1,4 @@
-const Note = require('./models/noteModel'); // Assurez-vous que le modèle de note est bien configuré
+const Note = require('../models/noteModel'); // Assurez-vous que le modèle de note est bien configuré
 
 // Obtenir toutes les notes
 exports.getAllNotes = async (req, res) => {

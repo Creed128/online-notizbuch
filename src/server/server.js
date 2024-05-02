@@ -1,38 +1,47 @@
-// Import necessary libraries
-
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const routes = require('./routes');
-const notesController = require('./notesController');
 
-// Initialize dotenv to use .env file for environment variables
+// Load environment variables
 dotenv.config();
 
-// Connection à MongoDB
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('MongoDB connected'))
-  .catch(err => console.log(err));
-
-// Create an Express application
+// Initialize express app
 const app = express();
 
-// Use CORS middleware to allow cross-origin requests
-app.use(cors());
+// CORS configuration to accept requests from the frontend
+app.use(cors({
+  origin: 'http://localhost:3000', // Adjust if your frontend is hosted somewhere else
+  credentials: true, // To support session cookies
+}));
 
-// Middleware to parse JSON bodies
+// Middleware to parse JSON
 app.use(express.json());
 
-// Use routes for API
-app.use('/api', routes);  // Utilisation des routes API
+// API routes
+app.use('/api', routes);
 
-// Define a route for a simple GET request
+// Simple route for base URL
 app.get('/', (req, res) => {
-  res.send('Hello, your server is running!');
+  res.send('Server is running.');
 });
 
-// Start the server on the specified port
+// Global error handling middleware
+app.use((err, req, res, next) => {
+  console.error('Unhandled error:', err);
+  res.status(500).send('Server error');
+});
+
+// Connect to MongoDB
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => {
+    console.log('MongoDB connection error:', err);
+    process.exit(1); // Exit process with error
+  });
+
+// Start the server
 const PORT = process.env.PORT || 3002;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
