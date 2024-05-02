@@ -5,7 +5,8 @@ const FetchNotes = () => {
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:3001/notes')
+    axios.get('http://localhost:3002/api/notes')
+
       .then(response => {
         setNotes(response.data);
       })
