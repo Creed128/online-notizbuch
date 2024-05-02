@@ -38,30 +38,41 @@ body {
     color: #333;
 }
 
-.btn-primary {
-    background-color: #007bff;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
-    border: none;
-    margin-top: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+/* Stil für die Navigationsleiste */
+/* Navigation.css */
+
+.content-wrap {
+    padding-bottom: 4rem;
+    margin-top: 10rem;
+    margin-left: 265px;
+    width: 60rem; /* Ändere die Breite des Hauptinhalts */
 }
 
-.btn-primary:hover {
-    background-color: #0056b3;
+
+
+.container {
+    width: 80%;
+    margin: 0 auto;
 }
 
-.GoogleLogin {
-    margin-top: 1rem;
+/* Stil für die Fußzeile */
+footer {
+    display: none; /* Dies versteckt den Footer vollständig */
 }
+/* Allgemeine Stile für alle Schaltflächen */
 
-.alert-danger {
-    background-color: #f8d7da;
-    color: #721c24;
-    padding: 0.75rem 1.25rem;
-    border-radius: 5px;
-    margin-top: 1rem;
-    font-size: 0.875rem;
+/* Home.css */
+
+button.btn-primary {
+    background-color: #edb80a; /* Hintergrundfarbe des primären Buttons */
+    border-color: #e29416; /* Randfarbe des primären Buttons */
+    color: rgb(63, 33, 2); /* Schriftfarbe des Button-Textes */
+    font-size: 18px; /* Schriftgröße des Button-Textes */
+    font-weight: bold; /* Fettgedruckte Schrift */
+    padding: 10px 20px; /* Innenabstand des Buttons */
+  }
+
+  button.btn-primary:hover {
+    background-color: #5a4004; /* Hintergrundfarbe des primären Buttons bei Hover */
+    border-color: #c9930b; /* Randfarbe des primären Buttons bei Hover */
 }
