@@ -1,59 +1,55 @@
-.neue-notiz-container {
+.new-note {
     max-width: 600px;
-    margin: 40px auto; /* Ajustez selon les besoins pour centrer */
+    margin: 40px auto; /* Center the form on the page */
     padding: 20px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    font-family: 'Arial', sans-serif;
-    border: 1px solid #ccc; /* Ajout pour visualiser le conteneur */
+    background: #fff; /* White background for the form */
+    border-radius: 8px; /* Rounded corners for the form */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    font-family: 'Arial', sans-serif; /* Font style for the form */
+    border: 1px solid #ccc; /* Border to define form boundaries */
 }
 
-.neue-notiz-title {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
+.new-note h2 {
+    text-align: center; /* Center the title text */
+    color: #333; /* Dark grey color for the text */
+    margin-bottom: 20px; /* Space below the title */
 }
 
-.neue-notiz-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.form-control {
+    width: 100%; /* Full width for input and textarea */
+    padding: 10px; /* Padding for input field */
+    border: 2px solid #ccc; /* Border for input and textarea */
+    border-radius: 4px; /* Rounded corners for input and textarea */
+    margin-bottom: 10px; /* Space between form elements */
 }
 
-.neue-notiz-input, .neue-notiz-textarea {
-    padding: 10px;
-    border: 2px solid #ccc; /* Rendre plus visible */
-    border-radius: 4px;
+.new-note textarea {
+    height: 150px; /* Set a fixed height for the textarea */
+    resize: vertical; /* Allow only vertical resizing */
 }
 
-.neue-notiz-textarea {
-    height: 150px;
-    resize: vertical; /* Permettre le redimensionnement vertical */
+.new-note input[type="radio"] {
+    margin-right: 5px; /* Space before the label text */
 }
 
-.label-radio {
-    display: inline-block;
-    margin-right: 20px;
-    font-size: 14px;
+.new-note label {
+    margin-right: 20px; /* Space between radio button options */
+    font-size: 14px; /* Font size for the radio button labels */
 }
 
-.neue-notiz-radios {
-    margin: 10px 0;
+.btn-primary {
+    background-color: #4CAF50; /* Green background for the button */
+    color: white; /* White text color */
+    border: none; /* No border */
+    padding: 10px 15px; /* Padding */
+    cursor: pointer; /* Pointer cursor on hover */
+    display: block; /* Make the button a block element to fill the width */
+    width: 100%; /* Full width */
+    border-radius: 4px; /* Rounded corners for the button */
+    font-size: 16px; /* Font size for the button text */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
 }
 
-.neue-notiz-button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    border-radius: 4px;
-    width: 100%;
-    font-size: 16px;
-}
-
-.neue-notiz-button:hover {
-    background-color: #45a049;
+.btn-primary:hover {
+    background-color: #45a049; /* Darker green on hover */
 }
