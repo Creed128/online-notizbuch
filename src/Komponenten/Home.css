@@ -12,7 +12,7 @@
 }
 .main-content {
     position: absolute; /* Position content over the image */
-    left: 480px;
+    left: 424px;
     width: 25%;
     max-width: 600px; /* Adjust this as needed */
     padding: 1rem;
@@ -36,17 +36,17 @@
     top: auto;
 }
 /* Stile für den Titel */
-h1 {
+.display-4 {
     font-family: Arial, sans-serif;
-    font-size: 32px;
-    color: #15076f;
+    font-size: 30px;
+    color: #161602;
     text-align: left; /* Titel nach links ausrichten */
     margin-top: 50px; /* Beispiel: Oberer Abstand von 50px */
     margin-left: 20px; /* Beispiel: Verschiebung um 20px nach links */
 }
 
 /* Stile für den Absatz */
-p {
+.lead {
     font-family: Arial, sans-serif;
     font-size: 20px;
     color: #666;
@@ -54,3 +54,4 @@ p {
     margin-top: 20px; /* Beispiel: Oberer Abstand von 20px */
     margin-left: 20px; /* Beispiel: Verschiebung um 20px nach links */
 }
+

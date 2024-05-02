@@ -45,7 +45,7 @@ h3 {
 }
 
 .btn-primary {
-    background-color: #ffbb00;
+    background-color: #b2930b;
     color: rgb(19, 18, 18);
     padding: 0.75rem 1.5rem;
     border-radius: 5px;
@@ -56,7 +56,7 @@ h3 {
 }
 
 .btn-primary:hover {
-    background-color: #0056b3;
+    background-color: #02236c;
 }
 
 .GoogleLogin {
