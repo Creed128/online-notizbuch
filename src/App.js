@@ -5,12 +5,14 @@ import Home from './Komponenten/Home';
 import Connexion from './Komponenten/connection/Connexion';
 import Navigation from './Komponenten/Navigation/Navigation';
 import Footer from './Komponenten/Footer/Footer';
-import Register from './Komponenten/connection/Register'; // Assuming you have a Register component
+import Register from './Komponenten/connection/Register';
+import NeueNotizFormular from './Komponenten/NotizFormular/NeueNotizFormular';
+import NotizListe from './Komponenten/NotizListe/NotizListe';
+import NotizDetail from './NotizDetail/NotizDetail'; // Assurez-vous que le chemin est correct
 
 const App = () => {
   const { user } = useContext(UserContext);
 
-  // Function to handle private routes
   const PrivateRoute = ({ children }) => {
     return user ? children : <Navigate to="/login" />;
   };
@@ -18,13 +20,14 @@ const App = () => {
   return (
     <Router>
       <Navigation />
-      <div className="content-wrap" style={{ paddingBottom: '4rem' }}> {/* Padding to avoid footer overlap */}
+      <div className="content-wrap" style={{ paddingBottom: '4rem' }}>
         <Routes>
           <Route path="/login" element={<Connexion />} />
-          <Route path="/register" element={<Register />} /> {/* Registration route */}
+          <Route path="/register" element={<Register />} />
           <Route path="/home" element={<PrivateRoute><Home /></PrivateRoute>} />
+          <Route path="/neue-notiz" element={<PrivateRoute><NeueNotizFormular /></PrivateRoute>} />
+          <Route path="/notizen" element={<PrivateRoute><NotizListe /></PrivateRoute>} />
           <Route path="/" element={<Navigate to="/home" />} />
-          {/* Redirect any other path to "/login" */}
           <Route path="*" element={<Navigate to="/login" />} />
         </Routes>
       </div>
