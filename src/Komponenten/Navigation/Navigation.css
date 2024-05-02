@@ -1,15 +1,17 @@
-/* Navigation.css */
 .navigation-bar {
-    background: #2E3A59;
-    padding: 1rem;
     display: flex;
-    justify-content: center; /* Changed from space-between to center */
-    align-items: center;
-}
-
-.nav-link {
-    color: white;
-    text-decoration: none;
-    margin: 0 2rem; /* Added margin to separate the links */
+    justify-content: flex-start; /* Navigation ganz links ausrichten */
+    align-items: center; /* Vertikal zentrieren */
+    padding: 10px; /* Optional: Abstand um die Navigation herum */
+    position: absolute;
+    top: 10px;
+    right: 200px;
+    background: linear-gradient(to right, rgb(211, 185, 107), rgba(231, 193, 105, 0.659), rgb(151, 123, 7));
     font-weight: bold;
-}
+    color: rgb(61, 48, 2);
+  }
+  
+  .nav-link {
+    margin-right: 50px; /* Optional: Abstand zwischen den Links */
+  }
+  
