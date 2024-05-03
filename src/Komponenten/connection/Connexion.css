@@ -1,5 +1,5 @@
-/* Connexion.css */
 
+/* Connexion.css */
 .row.justify-content-center {
     position: relative; /* Stellt sicher, dass absolute positionierte Elemente relativ zum body sind */
     margin: 0; /* Entfernt den Standardabstand des body */
@@ -65,7 +65,6 @@ h3 {
 .GoogleLogin {
     margin-top: 1rem;
 }
-
 
 .alert-danger {
     background-color: #f8f4f4;
