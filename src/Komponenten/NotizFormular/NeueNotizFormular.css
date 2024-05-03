@@ -1,0 +1,50 @@
+.new-note {
+    background-image: url('C:\Users\hajar\OneDrive\Bilder\Desktop\online-notizbuch\src\Komponenten\background\papier.jpg'); /* Pfad zur Papier-Textur */
+    background-size: auto; /* Größe des Hintergrundbilds automatisch anpassen */
+    background-position: center; /* Zentriert das Hintergrundbild */
+    background-repeat: no-repeat; /* Hintergrundbild nicht wiederholen */
+    padding: 30px; /* Innenabstand */
+    border-radius: 8px; /* Abgerundete Ecken */
+    box-shadow: 0 2px 4px rgba(19, 15, 1, 0.1); /* Schatten */
+    display: flex; /* Flexbox verwenden */
+    flex-direction: column; /* Anordnung der Elemente in einer Spalte */
+    justify-content: center; /* In der Mitte vertikal zentrieren */
+    align-items: center; /* In der Mitte horizontal zentrieren */
+    min-height: 100vh; /* Mindesthöhe des Elements auf die gesamte Seitenhöhe setzen */
+    color: #5c3d05;
+    background-color: #666157; /* Hintergrundfarbe ändern */
+}
+
+.new-note h2 {
+    font-size: 36px; /* Schriftgröße für den Titel */
+    margin-bottom: 10px; /* Abstand unter dem Titel */
+}
+
+.new-note .form-control {
+    background-color: #95876a;
+    width: 40%; /* Breite auf 100% setzen */
+    margin-bottom: 50px; /* Abstand zwischen den Eingabefeldern */
+    padding: 50px; /* Innenabstand für die Eingabefelder */
+    border: 1px solid #916404; /* Rahmen um die Eingabefelder */
+    border-radius: 30px; /* Abgerundete Ecken für die Eingabefelder */
+    margin-left: 70px; /* Verschiebung nach links um 20 Pixel */
+}
+
+
+.new-note label {
+    margin-right: 50px; /* Abstand zwischen den Radio-Buttons und dem Text */
+}
+
+.new-note button {
+    padding: 10px 20px; /* Innenabstand für den Button */
+    background-color: #b2a051;
+    color: #6b4706; /* Textfarbe des Buttons */
+    font-weight: bold;
+    border: none; /* Rand des Buttons entfernen */
+    border-radius: 30px; /* Abgerundete Ecken für den Button */
+    cursor: pointer; /* Zeiger anzeigen, wenn über den Button gefahren wird */
+}
+
+.new-note button:hover {
+    background-color: #c3975b; /* Hintergrundfarbe des Buttons bei Hover */
+}

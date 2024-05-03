@@ -32,6 +32,11 @@ const NotizListe = () => {
     return new Date(dateString).toLocaleDateString(undefined, options);
   };
 
+  const getRandomColorClass = () => {
+    const colors = ['color-1', 'color-2', 'color-3']; // Füge hier weitere Farbklassen hinzu, falls benötigt
+    return colors[Math.floor(Math.random() * colors.length)];
+  };
+
   return (
     <div className="notiz-liste-container">
       <input
@@ -47,10 +52,10 @@ const NotizListe = () => {
       </div>
       <div className="note-cards">
         {filteredNotes.map(note => (
-          <div key={note.id} className="note-card">
+          <div key={note.id} className={`note-card ${getRandomColorClass()}`}>
             <h4>{note.title}</h4>
             <p>Erstellt am: {formatDate(note.created_at)}</p>
-            <button onClick={() => console.log('Detail View for', note.id)}>sieht mehr </button>
+            <button onClick={() => console.log('Detail View for', note.id)}>Mehr anzeigen</button>
           </div>
         ))}
       </div>
