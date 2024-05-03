@@ -20,7 +20,7 @@ const Navigation = () => {
           <button onClick={handleLogout} className="nav-link">Logout</button>
         </>
       ) : (
-        <Link to="/login" className="nav-link">Login</Link>
+        <Link to="/login" className="nav-link">login</Link>
       )}
     </nav>
   );

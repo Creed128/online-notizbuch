@@ -1,33 +1,39 @@
-/* Stil für die gesamte Seite */
-body {
-    margin: 0;
-    padding: 0;
+/* Connexion.css */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f7f6;
     background-image: url('../background/background-image.png');
+    background-position: center;
     background-size: cover;
     background-position: center;
-    font-family: Arial, sans-serif;
-    color: #333; /* Standardtextfarbe */
-    justify-content: center;
-    min-height: 100vh;
+    background-repeat: no-repeat;
 }
+
 .col-md-6 {
-    background: linear-gradient(to right, rgb(211, 185, 107), rgba(231, 193, 105, 0.659), rgb(151, 123, 7));
+    background: linear-gradient(to right, rgb(244, 243, 240), rgba(165, 157, 85, 0.659), rgb(240, 239, 235));
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 8px 24px rgba(219, 169, 5, 0.2);
     width: 100%;
     max-width: 400px;
+    margin: 1rem;
+}
+
+h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #0c0b0bd8;
+    font-size: 2rem;
 }
 
 .form-group label {
-    display: flex;
-    margin-bottom: 1.5rem;
-    color: #483106dc;
-    justify-content: flex-start; /* Ändere die Ausrichtung des Labels */
-    align-items: center; /* Vertikale Ausrichtung des Labels */
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #0a0a0b;
 }
-
-
 
 .form-group input {
     padding: 0.75rem 1rem;
@@ -38,45 +44,31 @@ body {
     color: #333;
 }
 
-/* Stil für die Navigationsleiste */
-/* Navigation.css */
+.btn-primary {
+    background-color: #ffbb00;
+    color: rgb(19, 18, 18);
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    border: none;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
-.content-wrap {
-    padding-bottom: 4rem;
-    margin-top: 10rem;
-    margin-left: 265px;
-    width: 60rem; /* Ändere die Breite des Hauptinhalts */
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.GoogleLogin {
+    margin-top: 1rem;
 }
 
 
-
-.container {
-    width: 80%;
-    margin: 0 auto;
+.alert-danger {
+    background-color: #f8f4f4;
+    color: #0e0d0d;
+    padding: 0.75rem 1.25rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+    font-size: 0.875rem;
 }
-
-/* Stil für die Fußzeile */
-footer {
-    display: none; /* Dies versteckt den Footer vollständig */
-}
-/* Allgemeine Stile für alle Schaltflächen */
-
-/* Home.css */
-
-button.btn-primary {
-    background-color: #edb80a; /* Hintergrundfarbe des primären Buttons */
-    border-color: #e29416; /* Randfarbe des primären Buttons */
-    color: rgb(63, 33, 2); /* Schriftfarbe des Button-Textes */
-    font-size: 18px; /* Schriftgröße des Button-Textes */
-    font-weight: bold; /* Fettgedruckte Schrift */
-    padding: 10px 20px; /* Innenabstand des Buttons */
-  }
-  
-  button.btn-primary:hover {
-    background-color: #5a4004; /* Hintergrundfarbe des primären Buttons bei Hover */
-    border-color: #c9930b; /* Randfarbe des primären Buttons bei Hover */
-  }
-  
-  
-
-
