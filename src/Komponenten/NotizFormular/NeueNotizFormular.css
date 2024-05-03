@@ -1,5 +1,5 @@
 .new-note {
-    background-image: url('C:\Users\hajar\OneDrive\Bilder\Desktop\online-notizbuch\src\Komponenten\background\papier.jpg'); /* Pfad zur Papier-Textur */
+    background-image: url('/src/Komponenten/background/papier.jpg'); /* Pfad zur Papier-Textur */
     background-size: auto; /* Größe des Hintergrundbilds automatisch anpassen */
     background-position: center; /* Zentriert das Hintergrundbild */
     background-repeat: no-repeat; /* Hintergrundbild nicht wiederholen */
