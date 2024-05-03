@@ -1,71 +1,57 @@
 /* NotizListe.css */
-.notiz-liste-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
 
+.notiz-liste-container {
+  background: linear-gradient(135deg, #4a3304b2, #cb9a138a, #ffbf00ad);
+  padding: 75px; /* Innenabstand */
+}
 .search-input {
-  width: 100%;
+  width: 15%;
   padding: 10px;
   margin-bottom: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border: 1px solid #ccc;
+  border: 3px solid #c08009;
+  border-radius: 4px;
 }
+
 
 .filters {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Abstand zum nächsten Element */
 }
 
+
 .filter-btn {
-  padding: 10px 20px;
-  margin-right: 10px;
-  background-color: #f8f9fa;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  padding: 10px 20px; /* Innenabstand für den Button */
+    background: linear-gradient(135deg, #4a3304b2, #cb9a138a, #ffbf00ad);
+    color: #392501; /* Textfarbe des Buttons */
+    font-weight: bold;
+    border: none; /* Rand des Buttons entfernen */
+    border-radius: 20px; /* Abgerundete Ecken für den Button */
+    cursor: pointer; /* Zeiger anzeigen, wenn über den Button gefahren wird */
 }
 
 .filter-btn:hover {
-  background-color: #e2e6ea;
+  background-color: #e3bc0f; /* Hintergrundfarbe des Buttons bei Hover */
 }
 
 .note-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
+  display: grid; /* Grid-Layout für die Notizkarten */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Dynamische Spaltenanzahl basierend auf der Bildschirmbreite */
+  gap: 20px; /* Abstand zwischen den Notizkarten */
 }
 
 .note-card {
-  background: #ffffff;
-  border: 1px solid #ddd;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #f2f2f16d; /* Hintergrundfarbe der Notizkarten */
+  padding: 20px; /* Innenabstand */
+  border-radius: 8px; /* Abgerundete Ecken */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Schatten */
 }
 
 .note-card h4 {
-  font-size: 20px;
-  color: #333;
+  font-size: 20px; /* Schriftgröße für den Titel */
+  margin-bottom: 10px; /* Abstand unter dem Titel */
 }
 
 .note-card p {
-  font-size: 16px;
-  color: #666;
-}
-
-.note-card button {
-  background-color: #0056b3;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.note-card button:hover {
-  background-color: #004085;
+  font-size: 14px; /* Schriftgröße für den Inhalt */
+  color: #5f4803; /* Textfarbe für den Inhalt */
+  margin-bottom: 10px; /* Abstand unter dem Inhalt */
 }

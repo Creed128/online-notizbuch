@@ -1,55 +1,50 @@
 .new-note {
-    max-width: 600px;
-    margin: 40px auto; /* Center the form on the page */
-    padding: 20px;
-    background: #fff; /* White background for the form */
-    border-radius: 8px; /* Rounded corners for the form */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    font-family: 'Arial', sans-serif; /* Font style for the form */
-    border: 1px solid #ccc; /* Border to define form boundaries */
+    background-image: url('C:\Users\hajar\OneDrive\Bilder\Desktop\online-notizbuch\src\Komponenten\background\papier.jpg'); /* Pfad zur Papier-Textur */
+    background-size: auto; /* Größe des Hintergrundbilds automatisch anpassen */
+    background-position: center; /* Zentriert das Hintergrundbild */
+    background-repeat: no-repeat; /* Hintergrundbild nicht wiederholen */
+    padding: 30px; /* Innenabstand */
+    border-radius: 8px; /* Abgerundete Ecken */
+    box-shadow: 0 2px 4px rgba(19, 15, 1, 0.1); /* Schatten */
+    display: flex; /* Flexbox verwenden */
+    flex-direction: column; /* Anordnung der Elemente in einer Spalte */
+    justify-content: center; /* In der Mitte vertikal zentrieren */
+    align-items: center; /* In der Mitte horizontal zentrieren */
+    min-height: 100vh; /* Mindesthöhe des Elements auf die gesamte Seitenhöhe setzen */
+    color: #5c3d05;
+    background-color: #666157; /* Hintergrundfarbe ändern */
 }
 
 .new-note h2 {
-    text-align: center; /* Center the title text */
-    color: #333; /* Dark grey color for the text */
-    margin-bottom: 20px; /* Space below the title */
+    font-size: 36px; /* Schriftgröße für den Titel */
+    margin-bottom: 10px; /* Abstand unter dem Titel */
 }
 
-.form-control {
-    width: 100%; /* Full width for input and textarea */
-    padding: 10px; /* Padding for input field */
-    border: 2px solid #ccc; /* Border for input and textarea */
-    border-radius: 4px; /* Rounded corners for input and textarea */
-    margin-bottom: 10px; /* Space between form elements */
+.new-note .form-control {
+    background-color: #95876a;
+    width: 40%; /* Breite auf 100% setzen */
+    margin-bottom: 50px; /* Abstand zwischen den Eingabefeldern */
+    padding: 50px; /* Innenabstand für die Eingabefelder */
+    border: 1px solid #916404; /* Rahmen um die Eingabefelder */
+    border-radius: 30px; /* Abgerundete Ecken für die Eingabefelder */
+    margin-left: 70px; /* Verschiebung nach links um 20 Pixel */
 }
 
-.new-note textarea {
-    height: 150px; /* Set a fixed height for the textarea */
-    resize: vertical; /* Allow only vertical resizing */
-}
-
-.new-note input[type="radio"] {
-    margin-right: 5px; /* Space before the label text */
-}
 
 .new-note label {
-    margin-right: 20px; /* Space between radio button options */
-    font-size: 14px; /* Font size for the radio button labels */
+    margin-right: 50px; /* Abstand zwischen den Radio-Buttons und dem Text */
 }
 
-.btn-primary {
-    background-color: #4CAF50; /* Green background for the button */
-    color: white; /* White text color */
-    border: none; /* No border */
-    padding: 10px 15px; /* Padding */
-    cursor: pointer; /* Pointer cursor on hover */
-    display: block; /* Make the button a block element to fill the width */
-    width: 100%; /* Full width */
-    border-radius: 4px; /* Rounded corners for the button */
-    font-size: 16px; /* Font size for the button text */
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
+.new-note button {
+    padding: 10px 20px; /* Innenabstand für den Button */
+    background-color: #b2a051;
+    color: #6b4706; /* Textfarbe des Buttons */
+    font-weight: bold;
+    border: none; /* Rand des Buttons entfernen */
+    border-radius: 30px; /* Abgerundete Ecken für den Button */
+    cursor: pointer; /* Zeiger anzeigen, wenn über den Button gefahren wird */
 }
 
-.btn-primary:hover {
-    background-color: #45a049; /* Darker green on hover */
+.new-note button:hover {
+    background-color: #c3975b; /* Hintergrundfarbe des Buttons bei Hover */
 }

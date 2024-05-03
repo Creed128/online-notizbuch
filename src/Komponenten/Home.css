@@ -1,96 +1,58 @@
 /* Home.css */
 .home-container {
-    position: relative; /* Needed for absolute positioning of children */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background-image: url('./background/background-image.webp');
-    background-size: cover;
-    background-position: center;
+  position: relative; /* Needed for absolute positioning of children */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url('./background/background-image.webp');
+  background-size: cover;
+  background-position: center;
 }
 .main-content {
-    position: absolute; /* Position content over the image */
-    left: 615px;
-    width: 20%;
-    max-width: 600px; /* Adjust this as needed */
-    padding: 1rem;
-    background: #e9e3e3; /* Light background for legibility */
-    border-radius: 10px;
-    box-shadow: 0 20px 100px rgba(232, 244, 5, 0.3); /* Soft shadow for depth */
-    z-index: 10; /* Ensure it's above the background image */
+  position: absolute; /* Position content over the image */
+  left: 480px;
+  width: 25%;
+  max-width: 600px; /* Adjust this as needed */
+  padding: 1rem;
+  background: rgba(158, 156, 56, 0.151); /* Light background for legibility */
+  border-radius: 10px;
+  box-shadow: 0 20px 100px rgba(232, 244, 5, 0.3); /* Soft shadow for depth */
+  z-index: 10; /* Ensure it's above the background image */
 }
 
 .navigation-bar, .footer {
-    position: absolute;
-    top: 10; /* Navigation at the top */
-    left: 70%;
-    transform: translateX(-50%); /* Center align the bar */
-    background: transparent; /* No background for a clean look */
-    z-index: 20; /* Above the main content */
+  position: absolute;
+  top: 10; /* Navigation at the top */
+  left: 70%;
+  transform: translateX(-50%); /* Center align the bar */
+  background: transparent; /* No background for a clean look */
+  z-index: 20; /* Above the main content */
 }
 
 .footer {
-    bottom: 0; /* Footer at the bottom */
-    top: auto;
+  bottom:0; /* Footer at the bottom */
+  top: auto;
 }
 /* Stile für den Titel */
-/* Home.css */
-.home-container {
-    position: relative; /* Needed for absolute positioning of children */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background-image: url('./background/background-image.webp');
-    background-size: cover;
-    background-position: center;
-}
-.main-content {
-    position: absolute; /* Position content over the image */
-    left: 615px;
-    width: 20%;
-    max-width: 600px; /* Adjust this as needed */
-    padding: 1rem;
-    background: rgba(228, 224, 8, 0.151); /* Light background for legibility */
-    border-radius: 10px;
-    box-shadow: 0 20px 100px rgba(232, 244, 5, 0.3); /* Soft shadow for depth */
-    z-index: 10; /* Ensure it's above the background image */
-}
-
-.navigation-bar, .footer {
-    position: absolute;
-    top: 10; /* Navigation at the top */
-    left: 70%;
-    transform: translateX(-50%); /* Center align the bar */
-    background: transparent; /* No background for a clean look */
-    z-index: 20; /* Above the main content */
-}
-
-.footer {
-    bottom: 0; /* Footer at the bottom */
-    top: auto;
-}
-/* Stile für den Titel */
-.display-4 {
-  font-size: 26px; /* Beispiel Größe für die Überschrift */
-  font-weight: bold; /* Beispiel für Fettdruck */
-  color: #333; /* Beispiel Farbe */
-  font-family: 'Times New Roman', Times, serif; /* Beispiel Schriftfamilie für Überschrift */
+h1 {
+font-family: Arial, sans-serif;
+font-size: 32px;
+color: #15076f;
+text-align: left; /* Titel nach links ausrichten */
+margin-top: 50px; /* Beispiel: Oberer Abstand von 50px */
+margin-left: 20px; /* Beispiel: Verschiebung um 20px nach links */
 }
 
 /* Stile für den Absatz */
-.lead {
-    font-family: Arial, sans-serif;
-    font-size: 20px; /* Ändern Sie die Schriftgröße nach Bedarf */
-    color: #666;
-    text-align: left; /* Absatz nach links ausrichten */
-    margin-top: 20px; /* Beispiel: Oberer Abstand von 20px */
-    margin-left: 20px; /* Beispiel: Verschiebung um 20px nach links */
+p {
+font-family: Arial, sans-serif;
+font-size: 20px;
+color: #666;
+text-align: left; /* Absatz nach links ausrichten */
+margin-top: 20px; /* Beispiel: Oberer Abstand von 20px */
+margin-left: 20px; /* Beispiel: Verschiebung um 20px nach links */
 }
 
-
-
-
+/* Other styles as previously described */
