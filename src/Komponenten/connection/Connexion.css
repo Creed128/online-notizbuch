@@ -1,18 +1,16 @@
 
 /* Connexion.css */
 .row.justify-content-center {
-    position: relative; /* Stellt sicher, dass absolute positionierte Elemente relativ zum body sind */
-    margin: 0; /* Entfernt den Standardabstand des body */
-    padding: 0; /* Entfernt den Standardinnenabstand des body */
-    display: flex; /* Verwendet Flexbox für das Layout */
-    flex-direction: column; /* Inhalt in einer Spalte anordnen */
-    align-items: center; /* Zentriert den Inhalt horizontal */
-    justify-content: center; /* Zentriert den Inhalt vertikal */
-    min-height: 100vh; /* Mindesthöhe des body auf die volle Höhe des Viewports setzen */
-    background-image: url('../background/background-image.png'); /* Hintergrundbild setzen */
-    background-size: cover; /* Hintergrundbild skalieren, um die gesamte Seite zu bedecken */
-    background-position: center; /* Zentriert das Hintergrundbild */
-  }
+  position: relative; /* Needed for absolute positioning of children */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url('../background/background-image.png');
+  background-size: cover;
+  background-position: center;
+}
 
 .col-md-6 {
     background: linear-gradient(to right, rgb(211, 185, 107), rgba(231, 193, 105, 0.659), rgb(151, 123, 7));
