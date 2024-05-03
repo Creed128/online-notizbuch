@@ -6,21 +6,21 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-image: url('./background/background-image.webp');
+  background-image: url('./background/background-image.png');
   background-size: cover;
   background-position: center;
 }
+
 .main-content {
-  position: absolute; /* Position content over the image */
-  left: 480px;
-  width: 25%;
-  max-width: 600px; /* Adjust this as needed */
-  padding: 1rem;
-  background: rgba(158, 156, 56, 0.151); /* Light background for legibility */
-  border-radius: 10px;
-  box-shadow: 0 20px 100px rgba(232, 244, 5, 0.3); /* Soft shadow for depth */
-  z-index: 10; /* Ensure it's above the background image */
+  text-align: center; /* Zentriert den Text */
+  background: linear-gradient(to right, rgb(211, 185, 107), rgba(231, 193, 105, 0.659), rgb(151, 123, 7));
+  padding: 3px; /* Innenabstand */
+  margin-right: 420px;
+  border-radius: 8px; /* Kleinere abgerundete Ecken */
+  box-shadow: 0 4px 6px rgba(234, 183, 15, 0.1); /* Schatten */
+  max-width: 600px; /* Maximale Breite auf 600px begrenzen */
 }
+
 
 .navigation-bar, .footer {
   position: absolute;
@@ -39,7 +39,7 @@
 h1 {
 font-family: Arial, sans-serif;
 font-size: 32px;
-color: #15076f;
+color: #73717d;
 text-align: left; /* Titel nach links ausrichten */
 margin-top: 50px; /* Beispiel: Oberer Abstand von 50px */
 margin-left: 20px; /* Beispiel: Verschiebung um 20px nach links */

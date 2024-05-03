@@ -12,7 +12,7 @@
     align-items: center; /* In der Mitte horizontal zentrieren */
     min-height: 100vh; /* Mindesthöhe des Elements auf die gesamte Seitenhöhe setzen */
     color: #5c3d05;
-    background-color: #666157; /* Hintergrundfarbe ändern */
+    background-color: #625f5a; /* Hintergrundfarbe ändern */
 }
 
 .new-note h2 {
@@ -37,7 +37,7 @@
 
 .new-note button {
     padding: 10px 20px; /* Innenabstand für den Button */
-    background-color: #b2a051;
+    background: linear-gradient(to right, rgb(211, 185, 107), rgba(231, 193, 105, 0.659), rgb(151, 123, 7));
     color: #6b4706; /* Textfarbe des Buttons */
     font-weight: bold;
     border: none; /* Rand des Buttons entfernen */

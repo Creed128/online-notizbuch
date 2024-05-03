@@ -1,19 +1,22 @@
 /* Connexion.css */
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f4f7f6;
-    background-image: url('../background/background-image.png');
-    background-position: center;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
+
+.row.justify-content-center {
+    position: relative; /* Stellt sicher, dass absolute positionierte Elemente relativ zum body sind */
+    margin: 0; /* Entfernt den Standardabstand des body */
+    padding: 0; /* Entfernt den Standardinnenabstand des body */
+    display: flex; /* Verwendet Flexbox für das Layout */
+    flex-direction: column; /* Inhalt in einer Spalte anordnen */
+    align-items: center; /* Zentriert den Inhalt horizontal */
+    justify-content: center; /* Zentriert den Inhalt vertikal */
+    min-height: 100vh; /* Mindesthöhe des body auf die volle Höhe des Viewports setzen */
+    background-image: url('../background/background-image.png'); /* Hintergrundbild setzen */
+    background-size: cover; /* Hintergrundbild skalieren, um die gesamte Seite zu bedecken */
+    background-position: center; /* Zentriert das Hintergrundbild */
+  }
 
 .col-md-6 {
-    background: linear-gradient(to right, rgb(244, 243, 240), rgba(165, 157, 85, 0.659), rgb(240, 239, 235));
+    background: linear-gradient(to right, rgb(211, 185, 107), rgba(231, 193, 105, 0.659), rgb(151, 123, 7));
+    padding: 3px; /* Innenabstand */
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 8px 24px rgba(219, 169, 5, 0.2);
