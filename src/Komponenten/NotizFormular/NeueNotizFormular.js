@@ -43,13 +43,13 @@ const NeueNotizFormular = () => {
       <h2>Neue Notiz erstellen</h2>
       <input
         type="text"
-        className="form-control"
+        className="form-control title-input"
         value={titel}
         onChange={(e) => setTitel(e.target.value)}
         placeholder="Titel eingeben..."
       />
       <textarea
-        className="form-control"
+        className="form-control content-input"
         value={inhalt}
         onChange={(e) => setInhalt(e.target.value)}
         placeholder="Schreibe hier deine Notizen..."
