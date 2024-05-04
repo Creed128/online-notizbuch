@@ -54,5 +54,13 @@ text-align: left; /* Absatz nach links ausrichten */
 margin-top: 20px; /* Beispiel: Oberer Abstand von 20px */
 margin-left: 20px; /* Beispiel: Verschiebung um 20px nach links */
 }
+/* Stile für den Absatz */
+.lead {
+    font-family: Arial, sans-serif;
+    text-align: left; /* Absatz nach links ausrichten */
+    margin-top: 20px; /* Beispiel: Oberer Abstand von 20px */
+    margin-left: 20px; /* Beispiel: Verschiebung um 20px nach links */
+    
+}
 
 /* Other styles as previously described */
