@@ -5,7 +5,7 @@ const Notiz = ({ notiz, bearbeiteNotiz, loescheNotiz }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const handleLoeschen = () => {
-    const isConfirmed = window.confirm('Sind Sie sicher, dass Sie diese Notiz löschen möchten?'); // Message de confirmation
+    const isConfirmed = window.confirm('Sind Sie sicher, dass Sie diese Notiz löschen möchten?');
     if (isConfirmed) {
       loescheNotiz(notiz._id);
     }
@@ -31,6 +31,7 @@ const Notiz = ({ notiz, bearbeiteNotiz, loescheNotiz }) => {
     <div className="card mb-3 notiz-element">
       <div className="card-body">
         <h3 className="card-title">{notiz.title}</h3>
+        <p className="card-text">{new Date(notiz.createdAt).toLocaleString()}</p>
         <p className="card-text">
           {isExpanded ? notiz.content : previewContent}
           {showMehrAnzeigen && !isExpanded && '...'}

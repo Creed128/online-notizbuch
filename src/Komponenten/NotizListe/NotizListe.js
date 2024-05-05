@@ -24,10 +24,15 @@ const NotizListe = () => {
   }, []);
 
   const filteredNotes = notizen.filter(note => {
-    return (
-      (filter === 'all' || (filter === 'public' && note.isPublic) || (filter === 'private' && !note.isPublic && note.owner === user.username)) &&
-      (note.title.toLowerCase().includes(searchTerm.toLowerCase()) || note.content.toLowerCase().includes(searchTerm.toLowerCase()))
-    );
+    // Appliquez les filtres
+    const matchesFilter = filter === 'all'
+      || (filter === 'public' && note.isPublic)
+      || (filter === 'private' && !note.isPublic && note.owner === user.username);
+
+    const matchesSearchTerm = note.title.toLowerCase().includes(searchTerm.toLowerCase())
+      || note.content.toLowerCase().includes(searchTerm.toLowerCase());
+
+    return matchesFilter && matchesSearchTerm;
   });
 
   const handleBearbeiten = async (id, updatedNote) => {
@@ -43,10 +48,9 @@ const NotizListe = () => {
   };
 
   const handleLoeschen = async (id) => {
-    console.log('Deleting note with ID:', id);
     try {
       await axios.delete(`http://localhost:3002/api/notes/${id}`);
-      setNotizen(notizen.filter(note => note._id !== id)); // Utilisez `_id`
+      setNotizen(notizen.filter(note => note._id !== id));
     } catch (error) {
       console.error('Error deleting note:', error);
     }
@@ -68,7 +72,7 @@ const NotizListe = () => {
       <div className="note-cards">
         {filteredNotes.map(note => (
           <Notiz
-            key={note._id} // Utilisez `_id` comme clé
+            key={note._id}
             notiz={note}
             bearbeiteNotiz={handleBearbeiten}
             loescheNotiz={handleLoeschen}
