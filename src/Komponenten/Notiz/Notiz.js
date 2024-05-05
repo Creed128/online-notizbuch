@@ -1,3 +1,4 @@
+// Notiz.js
 import React, { useState } from 'react';
 import './notiz.css';
 
@@ -5,9 +6,8 @@ const Notiz = ({ notiz, bearbeiteNotiz, loescheNotiz }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const handleLoeschen = () => {
-    const isConfirmed = window.confirm('Sind Sie sicher, dass Sie diese Notiz löschen möchten?');
-    if (isConfirmed) {
-      loescheNotiz(notiz._id);
+    if (window.confirm('Sind Sie sicher, dass Sie diese Notiz löschen möchten?')) {
+      loescheNotiz(notiz._id); // Utilisez notiz._id
     }
   };
 
@@ -16,7 +16,7 @@ const Notiz = ({ notiz, bearbeiteNotiz, loescheNotiz }) => {
     const neuerInhalt = prompt('Geben Sie den neuen Inhalt ein:', notiz.content);
 
     if (neuerTitel && neuerInhalt) {
-      bearbeiteNotiz(notiz._id, { title: neuerTitel, content: neuerInhalt });
+      bearbeiteNotiz(notiz._id, { title: neuerTitel, content: neuerInhalt }); // Utilisez notiz._id
     }
   };
 
@@ -31,7 +31,9 @@ const Notiz = ({ notiz, bearbeiteNotiz, loescheNotiz }) => {
     <div className="card mb-3 notiz-element">
       <div className="card-body">
         <h3 className="card-title">{notiz.title}</h3>
-        <p className="card-text">{new Date(notiz.createdAt).toLocaleString()}</p>
+        <p className="card-text">
+          <small className="text-muted">Erstellt am: {new Date(notiz.createdAt).toLocaleString()}</small>
+        </p>
         <p className="card-text">
           {isExpanded ? notiz.content : previewContent}
           {showMehrAnzeigen && !isExpanded && '...'}
