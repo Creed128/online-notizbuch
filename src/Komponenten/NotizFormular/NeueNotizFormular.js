@@ -9,7 +9,6 @@ const NeueNotizFormular = () => {
     const [isPublic, setIsPublic] = useState(true);
     const navigate = useNavigate();
 
-    // Accéder au contexte de l'utilisateur
     const { user, hinzufuegenNotiz } = useContext(UserContext);
 
     const handleNeueNotiz = async () => {
@@ -75,6 +74,13 @@ const NeueNotizFormular = () => {
                 </label>
             </div>
             <button className="btn btn-primary" onClick={handleNeueNotiz}>Notiz erstellen</button>
+            <button
+                className="btn btn-secondary"
+                onClick={() => navigate('/notizen')}
+                style={{ marginTop: '1rem' }}
+            >
+                Notiz Liste
+            </button>
         </div>
     );
 };
