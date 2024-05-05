@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import { UserContext } from '../../contexts/UserContext';
+import Notiz from '../Notiz/Notiz'; // Importation du composant Notiz
 import './NotizListe.css';
 
 const NotizListe = () => {
@@ -27,14 +28,21 @@ const NotizListe = () => {
            (note.title.toLowerCase().includes(searchTerm.toLowerCase()) || note.content.toLowerCase().includes(searchTerm.toLowerCase()));
   });
 
-  const formatDate = (dateString) => {
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString(undefined, options);
+  const handleBearbeiten = (id, updatedNote) => {
+    // Logique pour mettre à jour la note
+    const updatedNotizen = notizen.map(note =>
+      note.id === id ? { ...note, ...updatedNote } : note
+    );
+    setNotizen(updatedNotizen);
   };
 
-  const getRandomColorClass = () => {
-    const colors = ['color-1', 'color-2', 'color-3']; // Füge hier weitere Farbklassen hinzu, falls benötigt
-    return colors[Math.floor(Math.random() * colors.length)];
+  const handleLoeschen = async (id) => {
+    try {
+      await axios.delete(`http://localhost:3002/api/notes/${id}`);
+      setNotizen(notizen.filter(note => note.id !== id));
+    } catch (error) {
+      console.error('Error deleting note:', error);
+    }
   };
 
   return (
@@ -52,11 +60,12 @@ const NotizListe = () => {
       </div>
       <div className="note-cards">
         {filteredNotes.map(note => (
-          <div key={note.id} className={`note-card ${getRandomColorClass()}`}>
-            <h4>{note.title}</h4>
-            <p>Erstellt am: {formatDate(note.created_at)}</p>
-            <button onClick={() => console.log('Detail View for', note.id)}>Mehr anzeigen</button>
-          </div>
+          <Notiz
+            key={note.id}
+            notiz={note}
+            bearbeiteNotiz={handleBearbeiten}
+            loescheNotiz={handleLoeschen}
+          />
         ))}
       </div>
     </div>
