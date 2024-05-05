@@ -27,15 +27,19 @@ const NotizListe = () => {
     return (filter === 'all' || (filter === 'public' && note.isPublic) || (filter === 'private' && !note.isPublic && note.owner === user.username)) &&
            (note.title.toLowerCase().includes(searchTerm.toLowerCase()) || note.content.toLowerCase().includes(searchTerm.toLowerCase()));
   });
-
-  const handleBearbeiten = (id, updatedNote) => {
-    // Logique pour mettre à jour la note
-    const updatedNotizen = notizen.map(note =>
-      note.id === id ? { ...note, ...updatedNote } : note
-    );
-    setNotizen(updatedNotizen);
+  
+  const handleBearbeiten = async (id, updatedNote) => {
+    try {
+      const result = await axios.put(`http://localhost:3002/api/notes/${id}`, updatedNote);
+      const updatedNotizen = notizen.map(note =>
+        note.id === id ? { ...note, ...result.data } : note
+      );
+      setNotizen(updatedNotizen);
+    } catch (error) {
+      console.error('Error updating note:', error);
+    }
   };
-
+  
   const handleLoeschen = async (id) => {
     try {
       await axios.delete(`http://localhost:3002/api/notes/${id}`);
@@ -44,6 +48,7 @@ const NotizListe = () => {
       console.error('Error deleting note:', error);
     }
   };
+  
 
   return (
     <div className="notiz-liste-container">
