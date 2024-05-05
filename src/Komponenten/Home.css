@@ -1,0 +1,41 @@
+/* Home.css */
+
+.home-container {
+    background-size: cover; /* Beispiel für Hintergrundgröße */
+    background-position: center; /* Beispiel für Hintergrundposition */
+    height: 100vh; /* Beispiel für Höhe */
+    display: flex; /* Beispiel für Flex-Layout */
+    justify-content: center; /* Beispiel für Ausrichtung */
+    align-items: center; /* Beispiel für Ausrichtung */
+  }
+  
+  .main-content {
+    position: absolute; /* Position content over the image */
+    left: 450px;
+    top: 300px;
+    width: 29%;
+    max-width: 600px; /* Adjust this as needed */
+    padding: 1rem;
+    background: linear-gradient(to right, rgb(118, 100, 66), rgba(205, 182, 124, 0.926), rgb(106, 90, 67));
+    border-radius: 10px;
+    box-shadow: 0 20px 100px rgba(232, 244, 5, 0.3); /* Soft shadow for depth */
+    z-index: 10; /* Ensure it's above the background image */
+}
+  
+.main-content h4 {
+  margin-bottom: 20px;
+  font-size: 36px; /* Die Einheit 'px' vergessen Sie nicht */
+  text-align: center; /* Zentriert den Text */
+  color: #fae9a6;
+}
+
+.main-content p {
+  margin-bottom: 50px;
+  font-size: 24px; /* Du kannst die Größe hier nach Bedarf anpassen */
+  text-align: center; /* Zentriert den Text */
+  color: #fae9a6;
+}
+
+
+
+  

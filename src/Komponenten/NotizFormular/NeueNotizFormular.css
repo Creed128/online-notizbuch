@@ -1,0 +1,60 @@
+
+.new-note {
+  width: 40%; /* Neue Breite des Elements */
+  margin: 0 auto;
+  text-align: center;
+  background-image: url('../background/papier.jpg');
+  background-size: 99% 100%;
+  padding: 100px; /* Increased spacing inside each note */
+  margin-bottom: 20px; /* Space between notes */
+  border: 1px solid #777070; /* Light grey border around each note */
+  border-radius: 8px; /* Rounded corners for the notes */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+.new-note h2 {
+  font-size: 30px;
+  margin-bottom: 50px;
+}
+.title-input {
+  background: linear-gradient(to right, rgba(204, 200, 188, 0.57), rgba(124, 110, 79, 0.659), rgb(195, 193, 185));
+  width: 60%;
+  margin-bottom: 50px;
+  padding: 50px;
+  border: 1px solid #916404;
+  border-radius: 30px;
+  margin-left: 70px;
+}
+.content-input {
+  background: linear-gradient(to right, rgba(204, 200, 188, 0.57), rgba(124, 110, 79, 0.659), rgb(195, 193, 185));
+  width: 75%;
+  margin-bottom: 100px;
+  padding: 50px;
+  border: 1px solid #916404;
+  border-radius: 30px;
+  margin-left: 70px;
+}
+.new-note label {
+  margin-right: 50px;
+}
+.new-note button {
+  padding: 10px 20px;
+  background: linear-gradient(to right, rgb(211, 185, 107), rgba(231, 193, 105, 0.659), rgb(151, 123, 7));
+  color: #6b4706;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+.new-note .title-input {
+  font-size: 30px; /* Hier die gewünschte Schriftgröße für den Titel */
+  font-weight: bold;
+  text-align: center;
+}
+
+.new-note .content-input {
+  font-size: 24px;
+}
+
+.new-note button:hover {
+  background-color: #c3975b;
+}

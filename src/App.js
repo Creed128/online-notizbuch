@@ -8,13 +8,13 @@ import Footer from './Komponenten/Footer/Footer';
 import Register from './Komponenten/connection/Register';
 import NeueNotizFormular from './Komponenten/NotizFormular/NeueNotizFormular';
 import NotizListe from './Komponenten/NotizListe/NotizListe';
-import NotizDetail from './NotizDetail/NotizDetail'; // Assurez-vous que le chemin est correct
+import NotizDetail from './NotizDetail/NotizDetail'; // Stelle sicher, dass der Pfad korrekt ist
 
 const App = () => {
   const { user } = useContext(UserContext);
 
   const PrivateRoute = ({ children }) => {
-    return user ? children : <Navigate to="/home" />;
+    return user ? children : <Navigate to="/login" />;
   };
 
   return (
@@ -27,7 +27,7 @@ const App = () => {
           <Route path="/home" element={<PrivateRoute><Home /></PrivateRoute>} />
           <Route path="/neue-notiz" element={<PrivateRoute><NeueNotizFormular /></PrivateRoute>} />
           <Route path="/notizen" element={<PrivateRoute><NotizListe /></PrivateRoute>} />
-          <Route path="/" element={<Navigate to="/home" />} />
+          <Route path="/" element={<Home />} /> {/* Dies ist die Änderung */}
           <Route path="*" element={<Navigate to="/login" />} />
         </Routes>
       </div>

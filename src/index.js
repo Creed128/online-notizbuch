@@ -3,11 +3,6 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import { UserProvider } from './contexts/UserContext';  // Import the named export
 // In index.js
-import 'bootstrap/dist/css/bootstrap.min.css';  // Import Bootstrap CSS
-import 'bootstrap/dist/js/bootstrap.bundle.min'; // Includes Popper
-
-
-
 ReactDOM.render(
   <React.StrictMode>
     <UserProvider>
