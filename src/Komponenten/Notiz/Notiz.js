@@ -1,15 +1,22 @@
 import React, { useState } from 'react';
-import './notiz.css'; 
+import './notiz.css';
 
 const Notiz = ({ notiz, bearbeiteNotiz, loescheNotiz }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const handleBearbeiten = () => {
-    const neuerTitel = prompt('Geben Sie den neuen Titel ein:');
-    const neuerInhalt = prompt('Geben Sie den neuen Inhalt ein:');
+  const handleLoeschen = () => {
+    const isConfirmed = window.confirm('Sind Sie sicher, dass Sie diese Notiz löschen möchten?'); // Message de confirmation
+    if (isConfirmed) {
+      loescheNotiz(notiz._id);
+    }
+  };
 
-    if (neuerTitel !== null && neuerInhalt !== null) {
-      bearbeiteNotiz(notiz.id, { title: neuerTitel, content: neuerInhalt });
+  const handleBearbeiten = () => {
+    const neuerTitel = prompt('Geben Sie den neuen Titel ein:', notiz.title);
+    const neuerInhalt = prompt('Geben Sie den neuen Inhalt ein:', notiz.content);
+
+    if (neuerTitel && neuerInhalt) {
+      bearbeiteNotiz(notiz._id, { title: neuerTitel, content: neuerInhalt });
     }
   };
 
@@ -17,8 +24,8 @@ const Notiz = ({ notiz, bearbeiteNotiz, loescheNotiz }) => {
     setIsExpanded(!isExpanded);
   };
 
-  const previewContent = notiz.content.slice(0, 100); // Afficher les 100 premiers caractères
-  const showMehrAnzeigen = notiz.content.length > 100; // Afficher 'Mehr anzeigen' si le contenu est long
+  const previewContent = notiz.content.slice(0, 100);
+  const showMehrAnzeigen = notiz.content.length > 100;
 
   return (
     <div className="card mb-3 notiz-element">
@@ -36,7 +43,7 @@ const Notiz = ({ notiz, bearbeiteNotiz, loescheNotiz }) => {
         <button className="btn btn-info ml-2" onClick={handleBearbeiten}>
           Bearbeiten
         </button>
-        <button className="btn btn-danger ml-2" onClick={() => loescheNotiz(notiz.id)}>
+        <button className="btn btn-danger ml-2" onClick={handleLoeschen}>
           Löschen
         </button>
       </div>
