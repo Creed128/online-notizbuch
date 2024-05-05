@@ -1,3 +1,8 @@
+
+.new-note button {
+    margin-top: 1rem; /* Ajoutez cet espacement si besoin */
+}
+
 .new-note {
     background-image: url('/src/Komponenten/background/papier.jpg'); /* Pfad zur Papier-Textur */
     background-size: auto; /* Größe des Hintergrundbilds automatisch anpassen */
