@@ -1,3 +1,4 @@
+// NeueNotizFormular.js
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../../contexts/UserContext';
@@ -7,6 +8,7 @@ const NeueNotizFormular = () => {
     const [titel, setTitel] = useState('');
     const [inhalt, setInhalt] = useState('');
     const [isPublic, setIsPublic] = useState(true);
+    const [createdAt, setCreatedAt] = useState(''); // Champ pour la date de création
     const navigate = useNavigate();
 
     const { user, hinzufuegenNotiz } = useContext(UserContext);
@@ -22,13 +24,15 @@ const NeueNotizFormular = () => {
                 title: titel,
                 content: inhalt,
                 isPublic,
-                owner: user.username
+                owner: user.username,
+                createdAt: createdAt || new Date().toISOString() // Utilisez la date fournie ou la date actuelle par défaut
             };
 
             await hinzufuegenNotiz(neueNotiz);
             setTitel('');
             setInhalt('');
             setIsPublic(true);
+            setCreatedAt(''); // Réinitialiser la date
             alert('Notiz erfolgreich erstellt!');
             navigate('/notizen'); // Redirection vers la liste des notes
         } catch (error) {
@@ -52,6 +56,13 @@ const NeueNotizFormular = () => {
                 value={inhalt}
                 onChange={(e) => setInhalt(e.target.value)}
                 placeholder="Schreibe hier deine Notizen..."
+            />
+            <input
+                type="datetime-local"
+                className="form-control"
+                value={createdAt}
+                onChange={(e) => setCreatedAt(e.target.value)}
+                placeholder="Datum der Erstellung eingeben..."
             />
             <div>
                 <label>

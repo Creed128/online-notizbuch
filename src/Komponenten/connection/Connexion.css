@@ -21,7 +21,7 @@ body {
   background-position: center;
 }
 .col-md-3 {
-  background: linear-gradient(to right, rgb(118, 100, 66), rgba(205, 182, 124, 0.926), rgb(106, 90, 67));
+  background: linear-gradient(to right, rgb(211, 19, 19), rgba(205, 182, 124, 0.926), rgb(106, 90, 67));
     padding: 3rem;
     border-radius: 10px;
     box-shadow: 0 8px 24px rgba(219, 169, 5, 0.2);

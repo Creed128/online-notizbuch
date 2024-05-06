@@ -1,33 +1,23 @@
-import React, { createContext, useState, useCallback } from 'react';
-import axios from 'axios';
+// UserContext.js
+import React, { createContext, useState } from 'react';
 
 export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
+  const login = (username) => {
+    setUser({ username });
+  };
+
   const logout = () => {
     setUser(null);
   };
 
-  const hinzufuegenNotiz = useCallback(async (note) => {
-    if (!user) {
-      throw new Error("Not logged in");
-    }
-    try {
-      const response = await axios.post('http://localhost:3002/api/notes', {...note, owner: user.username});
-      return response.data;
-    } catch (error) {
-      console.error('Error adding note:', error);
-      throw error;
-    }
-  }, [user]);
-
   const value = {
     user,
-    setUser,
+    login,
     logout,
-    hinzufuegenNotiz,  // Add the function to the context
   };
 
   return (

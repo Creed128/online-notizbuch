@@ -1,3 +1,4 @@
+// Navigation.js
 import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../contexts/UserContext';
@@ -17,10 +18,11 @@ const Navigation = () => {
       <Link to="/home" className="nav-link">Home</Link>
       {user ? (
         <>
+          <span className="nav-link">Hi, {user.username}</span>
           <button onClick={handleLogout} className="nav-link">Logout</button>
         </>
       ) : (
-        <Link to="/login" className="nav-link">login</Link>
+        <Link to="/login" className="nav-link">Login</Link>
       )}
     </nav>
   );

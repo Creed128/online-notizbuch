@@ -1,12 +1,12 @@
-// index.js
 import React from 'react';
-import { createRoot } from 'react-dom/client';
+import { createRoot } from 'react-dom/client'; // Importez createRoot
 import App from './App';
 import { UserProvider } from './contexts/UserContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
-const root = createRoot(document.getElementById('root'));
+const container = document.getElementById('root'); // Récupérez l'élément du DOM
+const root = createRoot(container); // Créez une racine
 root.render(
   <React.StrictMode>
     <UserProvider>

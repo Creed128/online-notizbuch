@@ -1,55 +1,50 @@
-const Note = require('../models/noteModel'); // Assurez-vous que le modèle de note est bien configuré
+const Note = require('../models/noteModel');
 
-// Obtenir toutes les notes
-exports.getAllNotes = async (req, res) => {
-    try {
-        const notes = await Note.find();
-        res.status(200).json(notes);
-    } catch (error) {
-        res.status(500).send("Erreur lors de la récupération des notes: " + error.message);
-    }
-};
-
-// Créer une nouvelle note
 exports.createNote = async (req, res) => {
     try {
-        const newNote = new Note({
-            title: req.body.title,
-            content: req.body.content,
-            createdAt: new Date() 
-        });
-        await newNote.save();
-        res.status(201).send('Note créée avec succès');
+      const newNote = new Note({
+        title: req.body.title,
+        content: req.body.content,
+        isPublic: req.body.isPublic || true,
+        owner: req.body.owner,
+        createdAt: req.body.createdAt || new Date() // Ajouter cette ligne pour utiliser la date actuelle si non spécifiée
+      });
+      await newNote.save();
+      res.status(201).json(newNote);
     } catch (error) {
-        res.status(500).send("Erreur lors de la création de la note: " + error.message);
+      res.status(500).send('Erreur lors de la création de la note : ' + error.message);
     }
-};
+  };
+  
 
 // Mettre à jour une note
 exports.updateNote = async (req, res) => {
-    try {
-        const updatedNote = await Note.findByIdAndUpdate(req.params.id, {
-            title: req.body.title,
-            content: req.body.content
-        }, { new: true });
-        if (!updatedNote) {
-            return res.status(404).send('Note non trouvée');
-        }
-        res.status(200).send('Note mise à jour avec succès');
-    } catch (error) {
-        res.status(500).send("Erreur lors de la mise à jour de la note: " + error.message);
+  try {
+    const updatedNote = await Note.findByIdAndUpdate(req.params.id, {
+      title: req.body.title,
+      content: req.body.content,
+      isPublic: req.body.isPublic,
+      owner: req.body.owner,
+      createdAt: req.body.createdAt || new Date() // Conserver la date d'origine ou mettre à jour
+    }, { new: true });
+    if (!updatedNote) {
+      return res.status(404).send('Note non trouvée');
     }
+    res.status(200).json(updatedNote);
+  } catch (error) {
+    res.status(500).send('Erreur lors de la mise à jour de la note : ' + error.message);
+  }
 };
 
 // Supprimer une note
 exports.deleteNote = async (req, res) => {
-    try {
-        const deletedNote = await Note.findByIdAndDelete(req.params.id);
-        if (!deletedNote) {
-            return res.status(404).send('Note non trouvée');
-        }
-        res.status(200).send('Note supprimée avec succès');
-    } catch (error) {
-        res.status(500).send("Erreur lors de la suppression de la note: " + error.message);
+  try {
+    const deletedNote = await Note.findByIdAndDelete(req.params.id);
+    if (!deletedNote) {
+      return res.status(404).send('Note non trouvée');
     }
+    res.status(200).send('Note supprimée avec succès');
+  } catch (error) {
+    res.status(500).send('Erreur lors de la suppression de la note : ' + error.message);
+  }
 };
