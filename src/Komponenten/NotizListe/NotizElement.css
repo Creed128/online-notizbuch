@@ -1,0 +1,3 @@
+.card {
+    background-color: inherit; /* Erbt den Hintergrund vom übergeordneten Element (in diesem Fall vom body) */
+}
