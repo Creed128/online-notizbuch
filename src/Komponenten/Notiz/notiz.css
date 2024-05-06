@@ -1,62 +1,14 @@
-/* Styles for note display */
-.notiz {
-  background-color: #cfb5b5; /* White background for the note */
-  padding: 20px; /* Spacing inside each note */
-  margin-bottom: 20px; /* Space between notes */
-  border: 1px solid #ccc; /* Light grey border around each note */
-  border-radius: 8px; /* Rounded corners for the notes */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-}
+/* Notiz.css */
 
-/* Styles for note actions */
-.notiz button {
-  background: linear-gradient(45deg, #fff, #e7c8e7, #81cee7); /* Gradient background */
-  font-size: 16px;
-  font-weight: bold;
-  outline: none;
-  border: none;
-  border-radius: 50px; /* Circular edges for the button */
-  padding: 10px 20px;
-  color: #0b0b0c; /* Dark color for text */
-  box-shadow: 0px 0px 24px -4px rgba(14, 131, 203, 0.53); /* Soft blue glow */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background 0.3s ease; /* Smooth transition for hover effects */
-}
-
-.notiz button:hover {
-  background: linear-gradient(45deg, #fff, #6ae02f, #f6f7f3); /* Change gradient on hover */
-  box-shadow: 0px 0px 24px -4px rgba(9, 213, 231, 0.223); /* Change shadow color on hover */
-}
-
-/* Popup styles for editing and creating notes */
-.popup {
-  background-color: #fff; /* White background for the popup */
-  padding: 20px; /* Padding around the content in the popup */
-  border: 6px solid #247ac5; /* Solid border for emphasis */
-  border-radius: 5px; /* Rounded corners */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-  max-width: 400px; /* Maximum width to maintain readability */
-  margin: 20px auto; /* Centering the popup */
-  text-align: center; /* Centering the text inside the popup */
-}
-
-.popup h3 {
-  margin-bottom: 20px; /* Space below the heading */
-}
-
-.popup input, .popup textarea {
-  width: 90%; /* Taking most of the popup width but leaving room for padding */
-  padding: 15px; /* Comfortable padding inside inputs and text areas */
-  margin-top: 10px; /* Space between form elements */
-  border: 2px solid #ccc; /* Subtle border for inputs */
-  border-radius: 4px; /* Slightly rounded corners for inputs */
-  font-size: 16px; /* Readable font size */
-}
-
-.popup button {
-  margin-top: 20px; /* Space above the button */
-}
-
-.popup button:last-child {
-  margin-left: 20px; /* Extra space for the second button if there are two */
-}
+.notiz-element {
+    margin-bottom: 20px; /* Beispiel für Margin */
+  }
+  
+  .card {
+    border: 1px solid #ccc; /* Beispiel für Rahmen */
+  }
+  
+  .card-title {
+    font-weight: bold; /* Beispiel für Schriftstärke */
+  }
+  

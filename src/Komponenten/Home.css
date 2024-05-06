@@ -1,56 +1,41 @@
 /* Home.css */
+
 .home-container {
-  position: relative; /* Needed for absolute positioning of children */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background-image: url('./background/background-image.png');
-  background-size: cover;
-  background-position: center;
+    background-size: cover; /* Beispiel für Hintergrundgröße */
+    background-position: center; /* Beispiel für Hintergrundposition */
+    height: 100vh; /* Beispiel für Höhe */
+    display: flex; /* Beispiel für Flex-Layout */
+    justify-content: center; /* Beispiel für Ausrichtung */
+    align-items: center; /* Beispiel für Ausrichtung */
+  }
+  
+  .main-content {
+    position: absolute; /* Position content over the image */
+    left: 450px;
+    top: 300px;
+    width: 29%;
+    max-width: 600px; /* Adjust this as needed */
+    padding: 1rem;
+    background: linear-gradient(to right, rgb(118, 100, 66), rgba(205, 182, 124, 0.926), rgb(106, 90, 67));
+    border-radius: 10px;
+    box-shadow: 0 20px 100px rgba(232, 244, 5, 0.3); /* Soft shadow for depth */
+    z-index: 10; /* Ensure it's above the background image */
 }
-
-.main-content {
+  
+.main-content h4 {
+  margin-bottom: 20px;
+  font-size: 36px; /* Die Einheit 'px' vergessen Sie nicht */
   text-align: center; /* Zentriert den Text */
-  background: linear-gradient(to right, rgb(211, 185, 107), rgba(231, 193, 105, 0.659), rgb(151, 123, 7));
-  padding: 3px; /* Innenabstand */
-  margin-right: 420px;
-  border-radius: 8px; /* Kleinere abgerundete Ecken */
-  box-shadow: 0 4px 6px rgba(234, 183, 15, 0.1); /* Schatten */
-  max-width: 600px; /* Maximale Breite auf 600px begrenzen */
+  color: #fae9a6;
 }
 
-.navigation-bar, .footer {
-  position: absolute;
-  top: 10; /* Navigation at the top */
-  left: 70%;
-  transform: translateX(-50%); /* Center align the bar */
-  background: transparent; /* No background for a clean look */
-  z-index: 20; /* Above the main content */
-}
-.footer {
-  bottom:0; /* Footer at the bottom */
-  top: auto;
-}
-/* Stile für den Titel */
-h1 {
-font-family: Arial, sans-serif;
-font-size: 32px;
-color: #73717d;
-text-align: left; /* Titel nach links ausrichten */
-margin-top: 50px; /* Beispiel: Oberer Abstand von 50px */
-margin-left: 20px; /* Beispiel: Verschiebung um 20px nach links */
+.main-content p {
+  margin-bottom: 50px;
+  font-size: 24px; /* Du kannst die Größe hier nach Bedarf anpassen */
+  text-align: center; /* Zentriert den Text */
+  color: #fae9a6;
 }
 
-/* Stile für den Absatz */
-p {
-font-family: Arial, sans-serif;
-font-size: 20px;
-color: #666;
-text-align: left; /* Absatz nach links ausrichten */
-margin-top: 20px; /* Beispiel: Oberer Abstand von 20px */
-margin-left: 120px; /* Beispiel: Verschiebung um 20px nach links */
-}
 
-/* Other styles as previously described */
+
+  
