@@ -1,0 +1,26 @@
+.footer {
+  background-color: transparent; /* Ändere die Hintergrundfarbe auf transparent */
+  padding: 0.5rem; /* Reduziere den Padding, um die Größe zu verringern */
+  display: flex;
+  justify-content: flex-start; /* Den Text rechts ausrichten */
+  align-items: center;
+  position: fixed; /* Ändere position auf fixed, um den Fußbereich am unteren Bildschirmrand zu fixieren */
+  bottom: 0;
+  width: 100%;
+  max-height: 3rem; /* Ändere die maximale Höhe des Fußbereichs */
+  overflow: hidden; /* Verhindere, dass Inhalt über den Footer hinausragt */
+}
+.footer-link {
+  font-size: 30px;
+  color: #1b1503;
+  text-decoration: none;
+  visibility: hidden; /* Verstecke den Text */
+}
+
+
+.footer-text {
+  color: #b39b00; /* Ändere die Farbe des Textes auf schwarz */
+  text-decoration: none;
+  font-weight: bold;
+}
+ /* Ändere die Farbe des Textes auf schwarz */

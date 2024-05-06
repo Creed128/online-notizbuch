@@ -1,0 +1,14 @@
+/* Notiz.css */
+
+.notiz-element {
+    margin-bottom: 20px; /* Beispiel für Margin */
+  }
+  
+  .card {
+    border: 1px solid #ccc; /* Beispiel für Rahmen */
+  }
+  
+  .card-title {
+    font-weight: bold; /* Beispiel für Schriftstärke */
+  }
+

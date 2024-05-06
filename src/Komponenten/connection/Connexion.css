@@ -1,78 +1,66 @@
-/* Stil für die gesamte Seite */
+/* Connexion.css */
 body {
-    margin: 0;
-    padding: 0;
-    background-image: url('../background/background-image.png');
-    background-size: cover;
-    background-position: center;
-    font-family: Arial, sans-serif;
-    color: #333; /* Standardtextfarbe */
-    justify-content: center;
-    min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-image: url('../background/background-image.png');
+  background-size: cover;
+  background-position: center;
+  font-family: Arial, sans-serif;
+  color: #333333d3; /* Standardtextfarbe */
+  justify-content: center;
+  min-height: 100vh;
 }
-.col-md-6 {
-    background: linear-gradient(to right, rgb(211, 185, 107), rgba(231, 193, 105, 0.659), rgb(151, 123, 7));
-    padding: 2rem;
+.row.justify-content-center {
+  position: relative; /* Needed for absolute positioning of children */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+.col-md-3 {
+  background: linear-gradient(to right, rgb(118, 100, 66), rgba(205, 182, 124, 0.926), rgb(106, 90, 67));
+    padding: 3rem;
     border-radius: 10px;
     box-shadow: 0 8px 24px rgba(219, 169, 5, 0.2);
-    width: 100%;
-    max-width: 400px;
+    margin-right: 420px;
+}
+
+
+h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #513a05d8;
+    font-size: 2rem;
 }
 
 .form-group label {
-    display: flex;
-    margin-bottom: 1.5rem;
-    color: #483106dc;
-    justify-content: flex-start; /* Ändere die Ausrichtung des Labels */
-    align-items: center; /* Vertikale Ausrichtung des Labels */
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #444548;
 }
-
-
 
 .form-group input {
     padding: 0.75rem 1rem;
-    border-radius: 5px;
+    width: 350px;
+    border-radius: 10px;
     border: 1px solid #d8a305;
     margin-bottom: 1rem;
     font-size: 1rem;
     color: #333;
 }
-
-/* Stil für die Navigationsleiste */
-/* Navigation.css */
-
-.content-wrap {
-    padding-bottom: 4rem;
-    margin-top: 10rem;
-    margin-left: 265px;
-    width: 60rem; /* Ändere die Breite des Hauptinhalts */
+.btn-primary {
+  padding: 10px 20px;
+  background: linear-gradient(to right, rgb(114, 90, 49), rgba(222, 195, 142, 0.786), rgb(96, 72, 40));
+  color: #111110;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  display: block; /* Damit die Breite-Einstellung funktioniert */
+  width: fit-content; /* Passt die Breite automatisch an den Inhalt an */
+  margin: 0 auto; /* Zentriert den Button horizontal */
 }
 
-
-
-.container {
-    width: 80%;
-    margin: 0 auto;
-}
-
-/* Stil für die Fußzeile */
-footer {
-    display: none; /* Dies versteckt den Footer vollständig */
-}
-/* Allgemeine Stile für alle Schaltflächen */
-
-/* Home.css */
-
-button.btn-primary {
-    background-color: #edb80a; /* Hintergrundfarbe des primären Buttons */
-    border-color: #e29416; /* Randfarbe des primären Buttons */
-    color: rgb(63, 33, 2); /* Schriftfarbe des Button-Textes */
-    font-size: 18px; /* Schriftgröße des Button-Textes */
-    font-weight: bold; /* Fettgedruckte Schrift */
-    padding: 10px 20px; /* Innenabstand des Buttons */
-  }
-
-  button.btn-primary:hover {
-    background-color: #5a4004; /* Hintergrundfarbe des primären Buttons bei Hover */
-    border-color: #c9930b; /* Randfarbe des primären Buttons bei Hover */
-}

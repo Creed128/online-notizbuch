@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import { UserContext } from '../../contexts/UserContext';
+import Notiz from '../Notiz/Notiz';
 import './NotizListe.css';
 
 const NotizListe = () => {
@@ -23,13 +24,36 @@ const NotizListe = () => {
   }, []);
 
   const filteredNotes = notizen.filter(note => {
-    return (filter === 'all' || (filter === 'public' && note.isPublic) || (filter === 'private' && !note.isPublic && note.owner === user.username)) &&
-           (note.title.toLowerCase().includes(searchTerm.toLowerCase()) || note.content.toLowerCase().includes(searchTerm.toLowerCase()));
+    // Appliquez les filtres
+    const matchesFilter = filter === 'all'
+      || (filter === 'public' && note.isPublic)
+      || (filter === 'private' && !note.isPublic && note.owner === user.username);
+
+    const matchesSearchTerm = note.title.toLowerCase().includes(searchTerm.toLowerCase())
+      || note.content.toLowerCase().includes(searchTerm.toLowerCase());
+
+    return matchesFilter && matchesSearchTerm;
   });
 
-  const formatDate = (dateString) => {
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString(undefined, options);
+  const handleBearbeiten = async (id, updatedNote) => {
+    try {
+      const result = await axios.put(`http://localhost:3002/api/notes/${id}`, updatedNote);
+      const updatedNotizen = notizen.map(note =>
+        note._id === id ? { ...note, ...result.data } : note
+      );
+      setNotizen(updatedNotizen);
+    } catch (error) {
+      console.error('Error updating note:', error);
+    }
+  };
+
+  const handleLoeschen = async (id) => {
+    try {
+      await axios.delete(`http://localhost:3002/api/notes/${id}`);
+      setNotizen(notizen.filter(note => note._id !== id));
+    } catch (error) {
+      console.error('Error deleting note:', error);
+    }
   };
 
   return (
@@ -47,11 +71,12 @@ const NotizListe = () => {
       </div>
       <div className="note-cards">
         {filteredNotes.map(note => (
-          <div key={note.id} className="note-card">
-            <h4>{note.title}</h4>
-            <p>Erstellt am: {formatDate(note.created_at)}</p>
-            <button onClick={() => console.log('Detail View for', note.id)}>Voir Plus</button>
-          </div>
+          <Notiz
+            key={note._id}
+            notiz={note}
+            bearbeiteNotiz={handleBearbeiten}
+            loescheNotiz={handleLoeschen}
+          />
         ))}
       </div>
     </div>
