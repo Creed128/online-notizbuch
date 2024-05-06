@@ -33,9 +33,8 @@ const Connexion = () => {
   };
 
   return (
-    <div className="container">
       <div className="row justify-content-center">
-        <div className="col-md-6">
+        <div className="col-md-3">
           <form onSubmit={handleSubmit}>
             <h3>Login</h3>
             <div className="form-group">
@@ -64,7 +63,6 @@ const Connexion = () => {
           </form>
         </div>
       </div>
-    </div>
   );
 };
 
