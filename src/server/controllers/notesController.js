@@ -15,7 +15,8 @@ exports.createNote = async (req, res) => {
     try {
         const newNote = new Note({
             title: req.body.title,
-            content: req.body.content
+            content: req.body.content,
+            createdAt: new Date() 
         });
         await newNote.save();
         res.status(201).send('Note créée avec succès');

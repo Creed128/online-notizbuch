@@ -12,11 +12,7 @@ const NeueNotizFormular = () => {
   // Use useContext to access user and hinzufuegenNotiz from UserContext
   const { user, hinzufuegenNotiz } = useContext(UserContext);
 
-  const handleNeueNotiz = async () => {
-    if (!titel || !inhalt) {
-      alert("Bitte füllen Sie alle Felder aus.");
-      return;
-    }
+    const { user, hinzufuegenNotiz } = useContext(UserContext);
 
     try {
       const neueNotiz = {

@@ -1,3 +1,6 @@
+.new-note button {
+    margin-top: 1rem; /* Ajoutez cet espacement si besoin */
+}
 
 .new-note {
   width: 40%; /* Neue Breite des Elements */
