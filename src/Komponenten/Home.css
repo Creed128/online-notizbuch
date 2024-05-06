@@ -21,7 +21,6 @@
   max-width: 600px; /* Maximale Breite auf 600px begrenzen */
 }
 
-
 .navigation-bar, .footer {
   position: absolute;
   top: 10; /* Navigation at the top */
@@ -30,7 +29,6 @@
   background: transparent; /* No background for a clean look */
   z-index: 20; /* Above the main content */
 }
-
 .footer {
   bottom:0; /* Footer at the bottom */
   top: auto;
@@ -52,7 +50,7 @@ font-size: 20px;
 color: #666;
 text-align: left; /* Absatz nach links ausrichten */
 margin-top: 20px; /* Beispiel: Oberer Abstand von 20px */
-margin-left: 20px; /* Beispiel: Verschiebung um 20px nach links */
+margin-left: 120px; /* Beispiel: Verschiebung um 20px nach links */
 }
 
 /* Other styles as previously described */
