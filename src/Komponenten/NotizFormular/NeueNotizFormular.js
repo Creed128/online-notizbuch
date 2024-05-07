@@ -14,32 +14,33 @@ const NeueNotizFormular = () => {
     const { user, hinzufuegenNotiz } = useContext(UserContext);
 
     const handleNeueNotiz = async () => {
-        if (!titel || !inhalt) {
-            alert("Bitte füllen Sie alle Felder aus.");
-            return;
-        }
-
-        try {
-            const neueNotiz = {
-                title: titel,
-                content: inhalt,
-                isPublic,
-                owner: user.username,
-                createdAt: createdAt || new Date().toISOString() // Utilisez la date fournie ou la date actuelle par défaut
-            };
-
-            await hinzufuegenNotiz(neueNotiz);
-            setTitel('');
-            setInhalt('');
-            setIsPublic(true);
-            setCreatedAt(''); // Réinitialiser la date
-            alert('Notiz erfolgreich erstellt!');
-            navigate('/notizen'); // Redirection vers la liste des notes
-        } catch (error) {
-            console.error('Fehler beim Erstellen der Notiz:', error);
-            alert('Fehler beim Erstellen der Notiz. Bitte versuchen Sie es erneut.');
-        }
+      if (!titel || !inhalt) {
+        alert('Bitte füllen Sie alle Felder aus.');
+        return;
+      }
+    
+      try {
+        const neueNotiz = {
+          title: titel,
+          content: inhalt,
+          isPublic,
+          owner: user.username,
+          createdAt: createdAt || new Date().toISOString(), // Ensure createdAt is in ISO format
+        };
+    
+        await hinzufuegenNotiz(neueNotiz);
+        setTitel('');
+        setInhalt('');
+        setIsPublic(true);
+        setCreatedAt(''); // Reset the createdAt field
+        alert('Notiz erfolgreich erstellt!');
+        navigate('/notizen');
+      } catch (error) {
+        console.error('Fehler beim Erstellen der Notiz:', error);
+        alert('Fehler beim Erstellen der Notiz. Bitte versuchen Sie es erneut.');
+      }
     };
+    
 
     return (
         <div className="new-note">

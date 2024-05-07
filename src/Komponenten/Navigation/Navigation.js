@@ -18,6 +18,8 @@ const Navigation = () => {
       <Link to="/home" className="nav-link">Home</Link>
       {user ? (
         <>
+          <Link to="/notizen" className="nav-link">Notiz Liste</Link>
+          <Link to="/neue-notiz" className="nav-link">Neue Notiz</Link>
           <Link to="/notizen" className="nav-link">Meine Notizen</Link>
           <Link to="/neue-notiz" className="nav-link">Notiz erstellen</Link>
           <span className="nav-link">Hi, {user.username}</span>

@@ -1,3 +1,4 @@
+// routes.js
 const express = require('express');
 const router = express.Router();
 const notesController = require('./controllers/notesController');
@@ -6,7 +7,10 @@ const userController = require('./controllers/userController');
 // Routes pour la gestion des notes
 router.get('/notes', notesController.getAllNotes);
 router.post('/notes', notesController.createNote);
+
+// Assurez-vous que la fonction updateNote est bien définie dans `notesController.js`
 router.put('/notes/:id', notesController.updateNote);
+
 router.delete('/notes/:id', notesController.deleteNote);
 
 // Routes pour l'enregistrement des utilisateurs
