@@ -16,6 +16,7 @@ export const UserProvider = ({ children }) => {
 
   const value = {
     user,
+    setUser, // Ajoutez `setUser` ici
     login,
     logout,
   };

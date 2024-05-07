@@ -1,6 +1,6 @@
 // Connexion.js
 import React, { useState, useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom'; // Importez `Link` pour la navigation
 import { UserContext } from '../../contexts/UserContext';
 import './Connexion.css';
 
@@ -59,6 +59,9 @@ const Connexion = () => {
           <button type="submit" className="btn btn-primary">Login</button>
           {error && <div className="alert alert-danger" role="alert">{error}</div>}
         </form>
+        <div className="mt-3">
+          <p>Pas de compte ? <Link to="/register">S'inscrire</Link></p>
+        </div>
       </div>
     </div>
   );
