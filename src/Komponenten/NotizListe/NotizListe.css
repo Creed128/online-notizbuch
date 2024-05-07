@@ -74,7 +74,7 @@
 .btn-danger {
   /* Style für den Löschen-Button */
   background: linear-gradient(135deg, #271f18fa, #ee68078a, #0a0a0aad);
-  color: #392501; /* Textfarbe des Buttons */
+  color: #efece7; /* Textfarbe des Buttons */
     font-weight: bold;
     border: none; /* Rand des Buttons entfernen */
     border-radius: 20px; /* Abgerundete Ecken für den Button */
