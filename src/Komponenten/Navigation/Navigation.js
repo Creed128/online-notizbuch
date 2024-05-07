@@ -18,11 +18,16 @@ const Navigation = () => {
       <Link to="/home" className="nav-link">Home</Link>
       {user ? (
         <>
+          <Link to="/notizen" className="nav-link">Meine Notizen</Link>
+          <Link to="/neue-notiz" className="nav-link">Notiz erstellen</Link>
           <span className="nav-link">Hi, {user.username}</span>
           <button onClick={handleLogout} className="nav-link">Logout</button>
         </>
       ) : (
-        <Link to="/login" className="nav-link">Login</Link>
+        <>
+          <Link to="/login" className="nav-link">Login</Link>
+          <Link to="/register" className="nav-link">Register</Link>
+        </>
       )}
     </nav>
   );

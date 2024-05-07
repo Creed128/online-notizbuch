@@ -60,7 +60,7 @@ const Connexion = () => {
           {error && <div className="alert alert-danger" role="alert">{error}</div>}
         </form>
         <div className="mt-3">
-          <p>Pas de compte ? <Link to="/register">S'inscrire</Link></p>
+          <p> Noch kein Account  ? <Link to="/register">konto erstellen</Link></p>
         </div>
       </div>
     </div>
