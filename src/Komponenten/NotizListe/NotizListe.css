@@ -1,11 +1,11 @@
 .notiz-liste-container {
   background-color: #a09d94;
   padding: 20px; /* Innenabstand */
-  height: 100vh; /* Volle Höhe des Viewports */
+  height: 500vh; /* Volle Höhe des Viewports */
 }
 
 .search-input {
-  width: 15%;
+  width: 11.5%;
   padding: 10px;
   margin-bottom: 20px;
   border: 3px solid #d8920e;
@@ -13,7 +13,7 @@
 }
 
 .filters {
-  margin-bottom: 20px; /* Abstand zum nächsten Element */
+  margin-bottom: 30px; /* Abstand zum nächsten Element */
 }
 
 .filter-btn {
@@ -36,20 +36,55 @@
   gap: 20px; /* Abstand zwischen den Notizkarten */
 }
 
-.note-card {
+.card-body {
   background: linear-gradient(to right, rgba(232, 223, 98, 0.376), rgba(205, 182, 124, 0.926), rgb(106, 90, 67));
-  padding: 20px; /* Innenabstand */
+  padding: 10px; /* Innenabstand */
   border-radius: 8px; /* Abgerundete Ecken */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Schatten */
 }
 
-.note-card h4 {
-  font-size: 20px; /* Schriftgröße für den Titel */
+.card-body h4 {
+  font-size: 24px; /* Schriftgröße für den Titel */
   margin-bottom: 10px; /* Abstand unter dem Titel */
 }
 
-.note-card p {
-  font-size: 14px; /* Schriftgröße für den Inhalt */
+.card-body p {
+  font-size: 18px; /* Schriftgröße für den Inhalt */
   color: #5f4803; /* Textfarbe für den Inhalt */
   margin-bottom: 10px; /* Abstand unter dem Inhalt */
+}
+.btn-info {
+  /* Style für den Bearbeiten-Button */
+    background: linear-gradient(135deg, #271f18fa, #ee68078a, #0a0a0aad);
+    color: #392501; /* Textfarbe des Buttons */
+    font-weight: bold;
+    border: none; /* Rand des Buttons entfernen */
+    border-radius: 20px; /* Abgerundete Ecken für den Button */
+    cursor: pointer; /* Zeiger anzeigen, wenn über den Button gefahren wird */
+    padding: 10px 15px; /* Padding oben/unten und links/rechts */
+    font-size: 14px; /* Schriftgröße */
+}
+
+.btn-info:hover {
+  /* Stiländerungen bei Mausüberfahrt für den Bearbeiten-Button */
+  background-color: #138496;
+  border-color: #138496;
+}
+
+.btn-danger {
+  /* Style für den Löschen-Button */
+  background: linear-gradient(135deg, #271f18fa, #ee68078a, #0a0a0aad);
+  color: #392501; /* Textfarbe des Buttons */
+    font-weight: bold;
+    border: none; /* Rand des Buttons entfernen */
+    border-radius: 20px; /* Abgerundete Ecken für den Button */
+    cursor: pointer; /* Zeiger anzeigen, wenn über den Button gefahren wird */
+    padding: 10px 15px; /* Padding oben/unten und links/rechts */
+   font-size: 14px; /* Schriftgröße */
+}
+
+.btn-danger:hover {
+  /* Stiländerungen bei Mausüberfahrt für den Löschen-Button */
+  background-color: #c82333;
+  border-color: #c82333;
 }
