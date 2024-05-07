@@ -18,6 +18,8 @@ const Navigation = () => {
       <Link to="/home" className="nav-link">Home</Link>
       {user ? (
         <>
+          <Link to="/notizen" className="nav-link">Notiz Liste</Link>
+          <Link to="/neue-notiz" className="nav-link">Neue Notiz</Link>
           <span className="nav-link">Hi, {user.username}</span>
           <button onClick={handleLogout} className="nav-link">Logout</button>
         </>
