@@ -2,54 +2,60 @@
 - hosts: all
   become: yes
   tasks:
-    - name: Install required software
-      apt:
+    - name: Update dnf repo and cache on all Amazon Linux boxes
+      dnf:
+        update_cache: yes
+
+    - name: Install Node.js and NPM
+      dnf:
         name:
-          - nodejs
-          - npm
-          - nginx
+        - nodejs
+        - npm
+        state: latest
+
+    - name: Install Nginx
+      dnf:
+        name: nginx
         state: latest
 
     - name: Clone project repository
       git:
         repo: 'https://github.com/Creed128/online-notizbuch.git'
-        dest: /var/www/yourproject
-        version: master
+        dest: "/var/www/online-notizbuch"
+        version: credo
 
     - name: Install PM2 globally
       npm:
         name: pm2
         global: yes
 
-    - name: Install Node.js project dependencies
+    - name: Install project dependencies
       npm:
-        path: "/var/www/yourproject"
+        path: "/var/www/online-notizbuch"
+        production: yes
 
-    - name: Start the Node application with PM2
-      command: pm2 start /var/www/yourproject/app.js --name your-app
+    - name: Start the application using PM2
+      command: pm2 start /var/www/online-notizbuch/src/server.js --name online-notizbuch
 
     - name: Configure nginx as a reverse proxy
-      blockinfile:
-        path: /etc/nginx/sites-available/default
-        block: |
-          server {
-            listen 80;
-            server_name yourdomain.com;
+      become: yes
+      template:
+        src: nginx.conf.j2
+        dest: /etc/nginx/sites-available/default
 
-            location / {
-              proxy_pass http://localhost:3000;
-              proxy_http_version 1.1;
-              proxy_set_header Upgrade $http_upgrade;
-              proxy_set_header Connection 'upgrade';
-              proxy_set_header Host $host;
-              proxy_cache_bypass $http_upgrade;
-            }
-          }
+    - name: Enable configuration by linking sites-available to sites-enabled
+      file:
+        src: /etc/nginx/sites-available/default
+        dest: /etc/nginx/sites-enabled/default
+        state: link
 
-    - name: Restart nginx
-      systemd:
+    - name: Restart nginx to apply configuration
+      service:
         name: nginx
         state: restarted
 
-    - name: Ensure application starts on reboot
-      command: pm2 startup systemd
+    - name: Ensure PM2 starts on reboot
+      command: pm2 startup systemd -u ec2-user --hp /home/ec2-user
+
+    - name: Save PM2 process list
+      command: pm2 save
