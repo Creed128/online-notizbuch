@@ -1,3 +1,4 @@
+// NeueNotizFormular.js
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../../contexts/UserContext';
@@ -7,35 +8,39 @@ const NeueNotizFormular = () => {
     const [titel, setTitel] = useState('');
     const [inhalt, setInhalt] = useState('');
     const [isPublic, setIsPublic] = useState(true);
+    const [createdAt, setCreatedAt] = useState(''); // Champ pour la date de création
     const navigate = useNavigate();
 
     const { user, hinzufuegenNotiz } = useContext(UserContext);
 
     const handleNeueNotiz = async () => {
-        if (!titel || !inhalt) {
-            alert("Bitte füllen Sie alle Felder aus.");
-            return;
-        }
-
-        try {
-            const neueNotiz = {
-                title: titel,
-                content: inhalt,
-                isPublic,
-                owner: user.username
-            };
-
-            await hinzufuegenNotiz(neueNotiz);
-            setTitel('');
-            setInhalt('');
-            setIsPublic(true);
-            alert('Notiz erfolgreich erstellt!');
-            navigate('/notizen'); // Redirection vers la liste des notes
-        } catch (error) {
-            console.error('Fehler beim Erstellen der Notiz:', error);
-            alert('Fehler beim Erstellen der Notiz. Bitte versuchen Sie es erneut.');
-        }
+      if (!titel || !inhalt) {
+        alert('Bitte füllen Sie alle Felder aus.');
+        return;
+      }
+    
+      try {
+        const neueNotiz = {
+          title: titel,
+          content: inhalt,
+          isPublic,
+          owner: user.username,
+          createdAt: createdAt || new Date().toISOString(), // Ensure createdAt is in ISO format
+        };
+    
+        await hinzufuegenNotiz(neueNotiz);
+        setTitel('');
+        setInhalt('');
+        setIsPublic(true);
+        setCreatedAt(''); // Reset the createdAt field
+        alert('Notiz erfolgreich erstellt!');
+        navigate('/notizen');
+      } catch (error) {
+        console.error('Fehler beim Erstellen der Notiz:', error);
+        alert('Fehler beim Erstellen der Notiz. Bitte versuchen Sie es erneut.');
+      }
     };
+    
 
     return (
         <div className="new-note">
@@ -52,6 +57,13 @@ const NeueNotizFormular = () => {
                 value={inhalt}
                 onChange={(e) => setInhalt(e.target.value)}
                 placeholder="Schreibe hier deine Notizen..."
+            />
+            <input
+                type="datetime-local"
+                className="form-control"
+                value={createdAt}
+                onChange={(e) => setCreatedAt(e.target.value)}
+                placeholder="Datum der Erstellung eingeben..."
             />
             <div>
                 <label>

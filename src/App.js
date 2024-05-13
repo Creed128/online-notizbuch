@@ -1,3 +1,4 @@
+// App.js
 import React, { useContext } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { UserContext } from './contexts/UserContext';
@@ -8,7 +9,6 @@ import Footer from './Komponenten/Footer/Footer';
 import Register from './Komponenten/connection/Register';
 import NeueNotizFormular from './Komponenten/NotizFormular/NeueNotizFormular';
 import NotizListe from './Komponenten/NotizListe/NotizListe';
-import NotizDetail from './NotizDetail/NotizDetail'; // Stelle sicher, dass der Pfad korrekt ist
 
 const App = () => {
   const { user } = useContext(UserContext);
@@ -23,11 +23,11 @@ const App = () => {
       <div className="content-wrap" style={{ paddingBottom: '4rem' }}>
         <Routes>
           <Route path="/login" element={<Connexion />} />
-          <Route path="/register" element={<Register />} />
+          <Route path="/register" element={<Register />} /> {/* Ajoutez la route ici */}
           <Route path="/home" element={<PrivateRoute><Home /></PrivateRoute>} />
           <Route path="/neue-notiz" element={<PrivateRoute><NeueNotizFormular /></PrivateRoute>} />
           <Route path="/notizen" element={<PrivateRoute><NotizListe /></PrivateRoute>} />
-          <Route path="/" element={<Home />} /> {/* Dies ist die Änderung */}
+          <Route path="/" element={<Navigate to="/home" />} />
           <Route path="*" element={<Navigate to="/login" />} />
         </Routes>
       </div>

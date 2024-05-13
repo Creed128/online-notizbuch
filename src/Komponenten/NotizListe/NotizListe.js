@@ -13,7 +13,9 @@ const NotizListe = () => {
   useEffect(() => {
     const fetchNotes = async () => {
       try {
-        const result = await axios.get('http://localhost:3002/api/notes');
+        const result = await axios.get('http://localhost:3002/api/notes', {
+          params: { username: user.username }
+        });
         setNotizen(result.data);
       } catch (error) {
         console.error('Error fetching notes:', error);
@@ -21,10 +23,10 @@ const NotizListe = () => {
     };
 
     fetchNotes();
-  }, []);
+  }, [user.username]);
 
   const filteredNotes = notizen.filter(note => {
-    // Appliquez les filtres
+    // Apply filters
     const matchesFilter = filter === 'all'
       || (filter === 'public' && note.isPublic)
       || (filter === 'private' && !note.isPublic && note.owner === user.username);
@@ -60,14 +62,14 @@ const NotizListe = () => {
     <div className="notiz-liste-container">
       <input
         type="text"
-        placeholder="Suche Notizen..."
+        placeholder="Search notes..."
         className="search-input"
         onChange={(e) => setSearchTerm(e.target.value)}
       />
       <div className="filters">
-        <button onClick={() => setFilter('all')} className="filter-btn">Alle</button>
-        <button onClick={() => setFilter('public')} className="filter-btn">Öffentlich</button>
-        <button onClick={() => setFilter('private')} className="filter-btn">Privat</button>
+        <button onClick={() => setFilter('all')} className="filter-btn">All</button>
+        <button onClick={() => setFilter('public')} className="filter-btn">Public</button>
+        <button onClick={() => setFilter('private')} className="filter-btn">Private</button>
       </div>
       <div className="note-cards">
         {filteredNotes.map(note => (

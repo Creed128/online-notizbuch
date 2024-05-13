@@ -1,0 +1,64 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: Update dnf repo and cache on all Amazon Linux boxes
+      dnf:
+        name:
+          - nodejs
+          - npm
+          - nginx
+          - git
+        state: latest
+        update_cache: yes
+
+    - name: Clone project repository
+      git:
+        repo: 'https://github.com/Creed128/online-notizbuch.git'
+        dest: "/var/www/online-notizbuch"
+        version: credo
+
+    - name: Install PM2 globally
+      npm:
+        name: pm2
+        global: yes
+        state: present
+
+    - name: Install project dependencies with a timeout
+      command: timeout 1800 npm install --production --verbose
+      args:
+        chdir: /var/www/online-notizbuch
+      environment:
+        npm_config_loglevel: verbose
+
+    - name: Start the application using PM2
+      command: pm2 start /var/www/online-notizbuch/src/server.js --name online-notizbuch
+
+    - name: Configure nginx as a reverse proxy
+      become: yes
+      template:
+        src: nginx.conf.j2
+        dest: /etc/nginx/sites-available/default
+
+    - name: Enable configuration by linking sites-available to sites-enabled
+      file:
+        src: /etc/nginx/sites-available/default
+        dest: /etc/nginx/sites-enabled/default
+        state: link
+
+    - name: Restart nginx to apply configuration
+      service:
+        name: nginx
+        state: restarted
+
+    - name: Ensure PM2 starts on reboot
+      command: pm2 startup systemd -u ec2-user --hp /home/ec2-user
+
+    - name: Save PM2 process list
+      command: pm2 save
+
+    - name: Verify Nginx configuration
+      command: nginx -t
+      register: nginx_test
+      changed_when: "nginx_test.rc != 0"
+      failed_when: "nginx_test.rc != 0"

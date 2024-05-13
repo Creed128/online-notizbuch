@@ -12,7 +12,7 @@ const app = express();
 
 // CORS configuration to accept requests from the frontend
 app.use(cors({
-  origin: 'http://localhost:3000', // Adjust if your frontend is hosted somewhere else
+  origin: 'http://localhost:3000',
   credentials: true, // To support session cookies
 }));
 
