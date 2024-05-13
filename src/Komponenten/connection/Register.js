@@ -27,7 +27,7 @@ const Register = () => {
       }
 
       const userData = await response.json();
-      setUser({ username: userData.user.username }); // Assurez-vous que `setUser` est appelé correctement
+      setUser({ username: userData.user.username }); // Assurez-vous que `setUser` est appelÃ© correctement
       navigate('/home');
     } catch (error) {
       setErrorMessage(error.message);
@@ -41,7 +41,7 @@ const Register = () => {
       <div className="row justify-content-center">
         <div className="col-md-6">
           <form onSubmit={handleSubmit}>
-            <h3>Register</h3>
+            <h3>Registrieren</h3>
             <div className="form-group">
               <label>Username:</label>
               <input
@@ -63,7 +63,7 @@ const Register = () => {
               />
             </div>
             <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
-              {isSubmitting ? 'Registering...' : 'Register'}
+              {isSubmitting ? 'Registering...' : 'Registrieren'}
             </button>
             {errorMessage && <div className="alert alert-danger" role="alert">{errorMessage}</div>}
           </form>

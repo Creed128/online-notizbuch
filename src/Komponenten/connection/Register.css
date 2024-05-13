@@ -5,29 +5,11 @@
   border-radius: 10px; /* Abgerundete Ecken für den Container */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Schatten für den Container */
 }
-.form-group {
-  margin-bottom: 20px;
-  margin-right: 10px; /* Verschiebung nach links */
-}
 
-.form-control {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ced4da;
-  border-radius: 5px;
-  box-sizing: border-box;
-}
-
-
-.btn-primary {
-  padding: 10px 20px;
-  background: linear-gradient(to right, rgb(114, 90, 49), rgba(222, 195, 142, 0.786), rgb(96, 72, 40));
-  color: #6b4706;
-  font-weight: bold;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  display: block;
-  width: fit-content;
-  margin: 0 auto;
+.col-md-6 {
+  background: linear-gradient(to right, rgb(118, 100, 66), rgba(205, 182, 124, 0.926), rgb(106, 90, 67));
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(219, 169, 5, 0.2);
+  margin-right: 420px;
 }

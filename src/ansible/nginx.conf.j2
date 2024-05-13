@@ -1,19 +1,16 @@
-http {
-    limit_req_zone $binary_remote_addr zone=mylimit:10m rate=10r/s;
+server {
+    listen 80;
+    server_name online-notizbuch.online www.online-notizbuch.online;
 
-    server {
-        listen 80;
-        server_name online-notizbuch.online www.online-notizbuch.online;
+    location / {
+        proxy_pass http://localhost:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
 
-        location / {
-            proxy_pass http://localhost:3000;
-            proxy_http_version 1.1;
-            proxy_set_header Upgrade $http_upgrade;
-            proxy_set_header Connection 'upgrade';
-            proxy_set_header Host $host;
-            proxy_cache_bypass $http_upgrade;
-
-            limit_req zone=mylimit burst=20;
-        }
+        # Ajoutez les configurations nécessaires pour la gestion des limites de requêtes ici
+        limit_req zone=mylimit burst=20;
     }
 }
