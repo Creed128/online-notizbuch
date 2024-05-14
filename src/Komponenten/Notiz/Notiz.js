@@ -1,4 +1,3 @@
-// Notiz.js
 import React, { useState } from 'react';
 import './notiz.css';
 
@@ -27,12 +26,15 @@ const Notiz = ({ notiz, bearbeiteNotiz, loescheNotiz }) => {
   const previewContent = notiz.content.slice(0, 100);
   const showMehrAnzeigen = notiz.content.length > 100;
 
+  // Vérifiez si `createdAt` est défini et formatez-le
+  const createdAt = notiz.createdAt ? new Date(notiz.createdAt).toLocaleString() : 'Invalid Date';
+
   return (
     <div className="card mb-3 notiz-element">
       <div className="card-body">
         <h3 className="card-title">{notiz.title}</h3>
         <p className="card-text">
-          <small className="text-muted">Erstellt am: {new Date(notiz.createdAt).toLocaleString()}</small>
+          <small className="text-muted">Erstellt am: {createdAt}</small> {/* Utiliser `createdAt` pour afficher */}
         </p>
         <p className="card-text">
           {isExpanded ? notiz.content : previewContent}
